@@ -3,19 +3,12 @@ import * as d3 from 'd3'
 import { useCSV } from '../hooks/useCSV'
 import { COLORS, FONTS } from '../styles/theme'
 
-const STREET_COLOR    = '#ff6b35'
+const STREET_COLOR = '#ff6b35'
 const PERMANENT_COLOR = '#4ecdc4'
 
-// Famous moments to annotate on the chart
-const ANNOTATIONS = [
-  { driver: 'Lewis Hamilton',    year: 2012, race: 'Singapore Grand Prix', grid: 1,  finish: 24, label: 'Hamilton\nSingapore 2012' },
-  { driver: 'Nigel Mansell',     year: 1987, race: 'Monaco Grand Prix',    grid: 1,  finish: 21, label: 'Mansell\nMonaco 1987' },
-  { driver: 'Sebastian Vettel',  year: 2017, race: 'Singapore Grand Prix', grid: 1,  finish: 18, label: 'Vettel\nSingapore 2017' },
-]
-
 // ─── Scatter + Density chart ─────────────────────────────────────────────────
-function ScatterChart({ data, circuitFilter, yearRange, showAnnotations }) {
-  const svgRef  = useRef(null)
+function ScatterChart({ data, circuitFilter, yearRange, trackFilter }) {
+  const svgRef = useRef(null)
   const wrapRef = useRef(null)
   const [dims, setDims] = useState({ width: 700, height: 520 })
 
@@ -33,19 +26,21 @@ function ScatterChart({ data, circuitFilter, yearRange, showAnnotations }) {
     return data.filter(d => {
       const ct = d['Circuit Type'] || ''
       const year = d['Year'] || 0
+      const track = d['Race Name'] || ''
       if (circuitFilter !== 'both' && ct !== circuitFilter) return false
       if (year < yearRange[0] || year > yearRange[1]) return false
+      if (trackFilter !== 'All' && track !== trackFilter) return false
       return d['Grid Position'] > 0 && d['Finish Position'] > 0
         && d['Grid Position'] <= 26 && d['Finish Position'] <= 26
     })
-  }, [data, circuitFilter, yearRange])
+  }, [data, circuitFilter, yearRange, trackFilter])
 
   useEffect(() => {
     if (!filtered.length || !svgRef.current) return
 
     const margin = { top: 30, right: 30, bottom: 54, left: 56 }
-    const W = dims.width  - margin.left - margin.right
-    const H = dims.height - margin.top  - margin.bottom
+    const W = dims.width - margin.left - margin.right
+    const H = dims.height - margin.top - margin.bottom
 
     const svg = d3.select(svgRef.current)
     svg.selectAll('*').remove()
@@ -112,7 +107,7 @@ function ScatterChart({ data, circuitFilter, yearRange, showAnnotations }) {
       const n = xVals.length
       const xMean = d3.mean(xVals), yMean = d3.mean(yVals)
       const slope = d3.sum(xVals.map((x, i) => (x - xMean) * (yVals[i] - yMean)))
-                  / d3.sum(xVals.map(x => Math.pow(x - xMean, 2)))
+        / d3.sum(xVals.map(x => Math.pow(x - xMean, 2)))
       const intercept = yMean - slope * xMean
       const x1 = 1, x2 = 24
       const y1 = slope * x1 + intercept
@@ -149,38 +144,37 @@ function ScatterChart({ data, circuitFilter, yearRange, showAnnotations }) {
       drawRegression(filtered.filter(d => d['Circuit Type'] === 'Permanent Circuit'), PERMANENT_COLOR)
     }
 
-    // Famous moment annotations
-    if (showAnnotations) {
-      ANNOTATIONS.forEach(ann => {
-        const x = xScale(ann.grid)
-        const y = yScale(ann.finish)
+    // Monaco 2024 highlight
+    const monaco24 = filtered.filter(d => d.Year === 2024 && d['Race Name']?.includes('Monaco') && d['Grid Position'] === d['Finish Position'])
+    if (monaco24.length > 0) {
+      monaco24.forEach(d => {
+        const x = xScale(d['Grid Position'])
+        const y = yScale(d['Finish Position'])
         g.append('circle')
           .attr('cx', x).attr('cy', y)
-          .attr('r', 7)
+          .attr('r', 6)
           .attr('fill', 'none')
           .attr('stroke', COLORS.racingRed)
-          .attr('stroke-width', 2)
-        g.append('text')
-          .attr('x', x + 10).attr('y', y - 4)
-          .attr('fill', COLORS.racingRed)
-          .attr('font-size', '9px')
-          .attr('font-family', FONTS.mono)
-          .selectAll('tspan')
-          .data(ann.label.split('\n'))
-          .join('tspan')
-          .attr('x', x + 10)
-          .attr('dy', (_, i) => i * 12)
-          .text(d => d)
+          .attr('stroke-width', 1.5)
       })
+
+      // Label for Monaco 2024
+      g.append('text')
+        .attr('x', xScale(10) + 12)
+        .attr('y', yScale(10) - 8)
+        .attr('fill', COLORS.racingRed)
+        .attr('font-size', '10px')
+        .attr('font-family', FONTS.mono)
+        .text('MONACO 2024')
     }
 
     // Tooltip
-    const tooltip = d3.select('body').select('.d3-tooltip')
+    const tooltip = d3.select('#grid-tooltip')
     const overlay = g.append('rect')
       .attr('width', W).attr('height', H).attr('fill', 'transparent')
       .style('cursor', 'crosshair')
 
-    overlay.on('mousemove', function(event) {
+    overlay.on('mousemove', function (event) {
       const [mx, my] = d3.pointer(event)
       const gx = Math.round(xScale.invert(mx))
       const fy = Math.round(yScale.invert(my))
@@ -195,13 +189,13 @@ function ScatterChart({ data, circuitFilter, yearRange, showAnnotations }) {
         const changeStr = change === 0
           ? '→ Held position'
           : change > 0
-          ? `▼ Dropped ${change}`
-          : `▲ Gained ${Math.abs(change)}`
+            ? `▼ Dropped ${change}`
+            : `▲ Gained ${Math.abs(change)}`
 
         tooltip
           .style('opacity', 1)
           .style('left', (event.pageX + 14) + 'px')
-          .style('top',  (event.pageY - 40) + 'px')
+          .style('top', (event.pageY - 40) + 'px')
           .html(`
             <div class="tooltip-title">${nearby['Race Name'] || ''} ${nearby['Year'] || ''}</div>
             <div style="font-size:14px;font-weight:500;margin:4px 0">${nearby['Driver'] || ''}</div>
@@ -249,7 +243,7 @@ function ScatterChart({ data, circuitFilter, yearRange, showAnnotations }) {
       .attr('font-family', FONTS.mono).attr('font-size', '10px').attr('letter-spacing', 2)
       .text('FINISH POSITION')
 
-  }, [filtered, dims, showAnnotations])
+  }, [filtered, dims, trackFilter])
 
   return (
     <div ref={wrapRef} style={{ width: '100%' }}>
@@ -263,18 +257,49 @@ function ScatterChart({ data, circuitFilter, yearRange, showAnnotations }) {
 export default function TheGrid() {
   const { data, loading } = useCSV('rq2_grid_finish_circuits.csv')
   const [circuitFilter, setCircuit] = useState('both')
-  const [yearRange, setYearRange]   = useState([2000, 2025])
-  const [showAnnotations, setAnnotations] = useState(true)
+  const [yearRange, setYearRange] = useState([2000, 2025])
+  const [trackFilter, setTrackFilter] = useState('All')
+
+  const uniqueTracks = useMemo(() => {
+    if (!data.length) return []
+    
+    const raceCounts = new Map()
+    const currentCalendarRaces = new Set()
+    
+    data.forEach(d => {
+      const race = d['Race Name']
+      const year = d['Year']
+      if (!race) return
+      
+      if (!raceCounts.has(race)) {
+        raceCounts.set(race, new Set())
+      }
+      raceCounts.get(race).add(year)
+      
+      if (year === 2024 || year === 2025) {
+        currentCalendarRaces.add(race)
+      }
+    })
+    
+    const validTracks = []
+    for (const [race, years] of raceCounts.entries()) {
+      if (currentCalendarRaces.has(race) && years.size > 15) {
+        validTracks.push(race)
+      }
+    }
+    
+    return validTracks.sort()
+  }, [data])
 
   // Stats
   const stats = useMemo(() => {
     if (!data.length) return {}
     const street = data.filter(d => d['Circuit Type'] === 'Street Circuit' && d['Grid Position'] === 1)
-    const perm   = data.filter(d => d['Circuit Type'] === 'Permanent Circuit' && d['Grid Position'] === 1)
+    const perm = data.filter(d => d['Circuit Type'] === 'Permanent Circuit' && d['Grid Position'] === 1)
     const monaco = data.filter(d => d['Race Name']?.includes('Monaco') && d['Grid Position'] === 1)
     return {
       streetPole: ((street.filter(d => d['Finish Position'] === 1).length / street.length) * 100).toFixed(1),
-      permPole:   ((perm.filter(d => d['Finish Position'] === 1).length / perm.length) * 100).toFixed(1),
+      permPole: ((perm.filter(d => d['Finish Position'] === 1).length / perm.length) * 100).toFixed(1),
       monacoPole: ((monaco.filter(d => d['Finish Position'] === 1).length / monaco.length) * 100).toFixed(1),
       total: data.length,
     }
@@ -290,7 +315,7 @@ export default function TheGrid() {
         borderTop: `1px solid ${COLORS.carbonBorder}`,
       }}
     >
-      <div className="d3-tooltip chart-tooltip"
+      <div id="grid-tooltip" className="d3-tooltip chart-tooltip"
         style={{ position: 'fixed', opacity: 0, zIndex: 999, pointerEvents: 'none', transition: 'opacity 0.15s' }} />
 
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
@@ -300,7 +325,7 @@ export default function TheGrid() {
         </h2>
         <p className="section-body" style={{ marginBottom: '40px' }}>
           Does qualifying predict the race? On most circuits, it's a strong guide.
-          But on the streets of Monaco and Singapore — it practically writes the result.
+          But on the streets of Monaco and Singapore, it practically writes the result.
         </p>
 
         {/* Key stats */}
@@ -339,17 +364,17 @@ export default function TheGrid() {
             </div>
             <div style={{ display: 'flex', gap: '6px' }}>
               {[
-                { key: 'both',              label: 'BOTH',      color: COLORS.silver },
-                { key: 'Street Circuit',    label: 'STREET',    color: STREET_COLOR },
+                { key: 'both', label: 'BOTH', color: COLORS.silver },
+                { key: 'Street Circuit', label: 'STREET', color: STREET_COLOR },
                 { key: 'Permanent Circuit', label: 'PERMANENT', color: PERMANENT_COLOR },
               ].map(({ key, label, color }) => (
                 <button key={key} onClick={() => setCircuit(key)}
                   style={{
                     padding: '5px 14px',
                     fontFamily: FONTS.mono, fontSize: '10px', letterSpacing: '2px',
-                    background:   circuitFilter === key ? color : 'transparent',
-                    color:        circuitFilter === key ? COLORS.carbon : COLORS.steel,
-                    border:       `1px solid ${circuitFilter === key ? color : COLORS.carbonBorder}`,
+                    background: circuitFilter === key ? color : 'transparent',
+                    color: circuitFilter === key ? COLORS.carbon : COLORS.steel,
+                    border: `1px solid ${circuitFilter === key ? color : COLORS.carbonBorder}`,
                     cursor: 'pointer', transition: 'all 0.2s',
                   }}>
                   {label}
@@ -369,7 +394,7 @@ export default function TheGrid() {
                 { label: '2000s', range: [2000, 2009] },
                 { label: '2010s', range: [2010, 2019] },
                 { label: '2020+', range: [2020, 2025] },
-                { label: 'ALL',   range: [1950, 2025] },
+                { label: 'ALL', range: [1950, 2025] },
               ].map(({ label, range }) => (
                 <button key={label}
                   onClick={() => setYearRange(range)}
@@ -377,8 +402,8 @@ export default function TheGrid() {
                     padding: '5px 14px',
                     fontFamily: FONTS.mono, fontSize: '10px', letterSpacing: '1.5px',
                     background: JSON.stringify(yearRange) === JSON.stringify(range) ? COLORS.racingRed : 'transparent',
-                    color:      JSON.stringify(yearRange) === JSON.stringify(range) ? 'white' : COLORS.steel,
-                    border:     `1px solid ${JSON.stringify(yearRange) === JSON.stringify(range) ? COLORS.racingRed : COLORS.carbonBorder}`,
+                    color: JSON.stringify(yearRange) === JSON.stringify(range) ? 'white' : COLORS.steel,
+                    border: `1px solid ${JSON.stringify(yearRange) === JSON.stringify(range) ? COLORS.racingRed : COLORS.carbonBorder}`,
                     cursor: 'pointer', transition: 'all 0.2s',
                   }}>
                   {label}
@@ -387,30 +412,37 @@ export default function TheGrid() {
             </div>
           </div>
 
-          {/* Annotations toggle */}
+          {/* Track filter */}
           <div>
             <div style={{ fontFamily: FONTS.mono, fontSize: '9px', letterSpacing: '2px', color: COLORS.steel, marginBottom: '8px' }}>
-              FAMOUS UPSETS
+              TRACK
             </div>
-            <button
-              onClick={() => setAnnotations(!showAnnotations)}
+            <select
+              value={trackFilter}
+              onChange={(e) => setTrackFilter(e.target.value)}
               style={{
-                padding: '5px 14px',
-                fontFamily: FONTS.mono, fontSize: '10px', letterSpacing: '2px',
-                background: showAnnotations ? COLORS.racingRed : 'transparent',
-                color:      showAnnotations ? 'white' : COLORS.steel,
-                border:     `1px solid ${showAnnotations ? COLORS.racingRed : COLORS.carbonBorder}`,
-                cursor: 'pointer', transition: 'all 0.2s',
-              }}>
-              {showAnnotations ? 'ON' : 'OFF'}
-            </button>
+                padding: '4px 10px',
+                fontFamily: FONTS.mono, fontSize: '10px', letterSpacing: '1.5px',
+                background: 'transparent',
+                color: trackFilter === 'All' ? COLORS.steel : 'white',
+                border: `1px solid ${COLORS.carbonBorder}`,
+                cursor: 'pointer',
+                outline: 'none',
+                minWidth: '160px',
+              }}
+            >
+              <option value="All" style={{ background: COLORS.carbonMid, color: 'white' }}>ALL TRACKS</option>
+              {uniqueTracks.map(t => (
+                <option key={t} value={t} style={{ background: COLORS.carbonMid, color: 'white' }}>{t.toUpperCase()}</option>
+              ))}
+            </select>
           </div>
         </div>
 
         {/* Legend */}
         <div style={{ display: 'flex', gap: '20px', marginBottom: '16px' }}>
           {[
-            { color: STREET_COLOR,    label: 'Street Circuit' },
+            { color: STREET_COLOR, label: 'Street Circuit' },
             { color: PERMANENT_COLOR, label: 'Permanent Circuit' },
           ].map(({ color, label }) => (
             <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '8px', fontFamily: FONTS.mono, fontSize: '10px', color: COLORS.steel, letterSpacing: '1.5px' }}>
@@ -431,7 +463,7 @@ export default function TheGrid() {
               data={data}
               circuitFilter={circuitFilter}
               yearRange={yearRange}
-              showAnnotations={showAnnotations}
+              trackFilter={trackFilter}
             />
           </div>
         )}

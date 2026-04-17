@@ -5,32 +5,33 @@ import { COLORS, FONTS, ERAS } from '../styles/theme'
 
 // Constructor colors — extended palette
 const CONSTRUCTOR_COLORS = {
-  'Ferrari':      '#dc0000',
-  'McLaren':      '#ff8000',
-  'Mercedes':     '#00d2be',
-  'Red Bull':     '#3671c6',
-  'Williams':     '#005aff',
-  'Renault':      '#fff500',
-  'Benetton':     '#00a651',
-  'Team Lotus':   '#b5985a',
+  'Ferrari': '#dc0000',
+  'McLaren': '#ff8000',
+  'Mercedes': '#00d2be',
+  'Red Bull': '#3671c6',
+  'Williams': '#005aff',
+  'Renault': '#fff500',
+  'Benetton': '#00a651',
+  'Team Lotus': '#b5985a',
   'Lotus-Climax': '#c8a96e',
-  'Lotus-Ford':   '#d4b87a',
-  'Sauber':       '#9b0000',
-  'Force India':  '#f596c8',
-  'Brawn':        '#f5f5f5',
-  'Brabham':      '#aaaaaa',
-  'Tyrrell':      '#006ef5',
-  'BRM':          '#006400',
-  'Maserati':     '#c0392b',
-  'Vanwall':      '#005f3c',
-  'Cooper-Climax':'#4a90d9',
-  'Alfa Romeo':   '#960000',
-  'Matra-Ford':   '#002395',
-  'Brabham-Repco':'#888888',
+  'Lotus-Ford': '#d4b87a',
+  'Sauber': '#9b0000',
+  'Force India': '#f596c8',
+  'Brawn': '#f5f5f5',
+  'Brabham': '#aaaaaa',
+  'Tyrrell': '#006ef5',
+  'BRM': '#006400',
+  'Maserati': '#c0392b',
+  'Vanwall': '#005f3c',
+  'Cooper-Climax': '#4a90d9',
+  'Alfa Romeo': '#960000',
+  'Matra-Ford': '#002395',
+  'Brabham-Repco': '#888888',
   'Aston Martin': '#006f62',
-  'Haas':         '#ffffff',
-  'AlphaTauri':   '#2b4562',
-  'Alpine':       '#0090ff',
+  'Haas': '#ffffff',
+  'AlphaTauri': '#2b4562',
+  'Alpine': '#0090ff',
+  'Lotus F1': '#e5c158',
 }
 
 const getColor = (name) => {
@@ -43,8 +44,7 @@ const getColor = (name) => {
 
 // Top constructors by total wins to show in stacked area
 const TOP_CONSTRUCTORS = [
-  'Ferrari','McLaren','Red Bull','Mercedes','Williams',
-  'Renault','Benetton','Team Lotus','Brabham','Tyrrell',
+  'Ferrari', 'Williams', 'McLaren', 'Red Bull', 'Mercedes', 'Renault'
 ]
 
 // ─── Era annotation band ─────────────────────────────────────────────────────
@@ -68,13 +68,13 @@ function EraLabel({ era, xScale, height, svgWidth }) {
 
 // ─── Stacked Area Chart ───────────────────────────────────────────────────────
 function StackedAreaChart({ data, selectedConstructors, onHover, hoveredYear }) {
-  const svgRef  = useRef(null)
+  const svgRef = useRef(null)
   const wrapRef = useRef(null)
   const [dims, setDims] = useState({ width: 800, height: 420 })
 
   const margin = { top: 30, right: 20, bottom: 48, left: 52 }
-  const W = dims.width  - margin.left - margin.right
-  const H = dims.height - margin.top  - margin.bottom
+  const W = dims.width - margin.left - margin.right
+  const H = dims.height - margin.top - margin.bottom
 
   // Resize observer
   useEffect(() => {
@@ -93,12 +93,14 @@ function StackedAreaChart({ data, selectedConstructors, onHover, hoveredYear }) 
 
     const keys = selectedConstructors.length ? selectedConstructors : TOP_CONSTRUCTORS
 
+    const getMappedConstructor = (name) => (name === 'Alpine' || name === 'Lotus F1') ? 'Renault' : name;
+
     // Group by year, sum points per constructor
     const byYear = d3.rollup(
-      data.filter(d => keys.includes(d.Constructor) && d.Year >= 1950 && d.Year <= 2025),
+      data.filter(d => keys.includes(getMappedConstructor(d.Constructor)) && d.Year >= 1950 && d.Year <= 2025),
       v => d3.sum(v, d => d.Points || 0),
       d => d.Year,
-      d => d.Constructor
+      d => getMappedConstructor(d.Constructor)
     )
 
     const years = Array.from(byYear.keys()).sort(d3.ascending)
@@ -116,6 +118,36 @@ function StackedAreaChart({ data, selectedConstructors, onHover, hoveredYear }) 
 
     const svg = d3.select(svgRef.current)
     svg.selectAll('*').remove()
+
+    const defs = svg.append('defs')
+    const splitPosLotusStart = ((2011.5 - 1950) / (2025 - 1950)) * 100
+    const splitPosLotusEnd = ((2015.5 - 1950) / (2025 - 1950)) * 100
+    const splitPosAlpine = ((2020.5 - 1950) / (2025 - 1950)) * 100
+
+    const grad = defs.append('linearGradient')
+      .attr('id', 'renault-alpine-grad')
+      .attr('gradientUnits', 'userSpaceOnUse')
+      .attr('x1', 0).attr('y1', 0)
+      .attr('x2', W).attr('y2', 0)
+
+    grad.append('stop')
+      .attr('offset', `${splitPosLotusStart}%`)
+      .attr('stop-color', getColor('Renault'))
+    grad.append('stop')
+      .attr('offset', `${splitPosLotusStart}%`)
+      .attr('stop-color', getColor('Lotus F1'))
+    grad.append('stop')
+      .attr('offset', `${splitPosLotusEnd}%`)
+      .attr('stop-color', getColor('Lotus F1'))
+    grad.append('stop')
+      .attr('offset', `${splitPosLotusEnd}%`)
+      .attr('stop-color', getColor('Renault'))
+    grad.append('stop')
+      .attr('offset', `${splitPosAlpine}%`)
+      .attr('stop-color', getColor('Renault'))
+    grad.append('stop')
+      .attr('offset', `${splitPosAlpine}%`)
+      .attr('stop-color', '#f596c8') // Alpine Pink
 
     const g = svg.append('g').attr('transform', `translate(${margin.left},${margin.top})`)
 
@@ -151,7 +183,10 @@ function StackedAreaChart({ data, selectedConstructors, onHover, hoveredYear }) 
     // Draw stacked areas
     series.forEach((s, i) => {
       const name = keys[i]
-      const color = getColor(name)
+      let color = getColor(name)
+      if (name === 'Renault') {
+        color = 'url(#renault-alpine-grad)'
+      }
 
       g.append('path')
         .datum(s)
@@ -181,14 +216,14 @@ function StackedAreaChart({ data, selectedConstructors, onHover, hoveredYear }) 
         .attr('stroke-dashoffset', totalLength)
         .transition().duration(1800).delay(i * 120).ease(d3.easeCubicOut)
         .attr('stroke-dashoffset', 0)
-        .on('end', function() {
+        .on('end', function () {
           d3.select(this).attr('stroke-dasharray', null).attr('stroke-dashoffset', null)
         })
     })
 
     // Era labels
-    ERAS.forEach(era => {
-      EraLabelD3(g, era, xScale, H)
+    ERAS.forEach((era, i) => {
+      EraLabelD3(g, era, xScale, H, i)
     })
 
     // Hover line
@@ -251,7 +286,7 @@ function StackedAreaChart({ data, selectedConstructors, onHover, hoveredYear }) 
     g.append('rect')
       .attr('width', W).attr('height', H)
       .attr('fill', 'transparent')
-      .on('mousemove', function(event) {
+      .on('mousemove', function (event) {
         const [mx] = d3.pointer(event)
         const year = Math.round(xScale.invert(mx))
         hoverLine.attr('x1', xScale(year)).attr('x2', xScale(year)).attr('opacity', 1)
@@ -277,7 +312,7 @@ function StackedAreaChart({ data, selectedConstructors, onHover, hoveredYear }) 
 }
 
 // D3 era label helper (imperative)
-function EraLabelD3(g, era, xScale, H) {
+function EraLabelD3(g, era, xScale, H, index = 0) {
   const x1 = xScale(Math.max(era.start, 1950))
   const x2 = xScale(Math.min(era.end + 1, 2025))
   const midX = (x1 + x2) / 2
@@ -290,9 +325,13 @@ function EraLabelD3(g, era, xScale, H) {
     .attr('stroke-width', 1)
     .attr('stroke-dasharray', '3,4')
 
+  const yPos = 12 + (index % 2 === 0 ? 0 : 14);
+  const isLast = index === ERAS.length - 1;
+
   g.append('text')
-    .attr('x', midX).attr('y', 12)
-    .attr('text-anchor', 'middle')
+    .attr('x', isLast ? x2 : midX)
+    .attr('y', yPos)
+    .attr('text-anchor', isLast ? 'end' : 'middle')
     .attr('fill', COLORS.steel)
     .attr('font-size', '8px')
     .attr('font-family', FONTS.mono)
@@ -302,7 +341,7 @@ function EraLabelD3(g, era, xScale, H) {
 
 // ─── Dominance Lollipop ───────────────────────────────────────────────────────
 function DominanceLollipop({ data }) {
-  const svgRef  = useRef(null)
+  const svgRef = useRef(null)
   const wrapRef = useRef(null)
   const [dims, setDims] = useState({ width: 800, height: 500 })
   const [filter, setFilter] = useState('all') // 'all' | 'dominant' | 'chaotic'
@@ -321,8 +360,8 @@ function DominanceLollipop({ data }) {
     if (!data.length) return []
     const byYear = d3.rollup(data, v => ({
       total: d3.sum(v, d => d.Win || 0),
-      max:   d3.max(v, d => d.Win || 0),
-      top:   v.sort((a,b) => (b.Win||0)-(a.Win||0))[0]?.Constructor || '',
+      max: d3.max(v, d => d.Win || 0),
+      top: v.sort((a, b) => (b.Win || 0) - (a.Win || 0))[0]?.Constructor || '',
     }), d => d.Year)
 
     return Array.from(byYear.entries())
@@ -336,8 +375,8 @@ function DominanceLollipop({ data }) {
   }, [data])
 
   const filtered = useMemo(() => {
-    if (filter === 'dominant') return [...dominanceData].sort((a,b) => b.pct - a.pct).slice(0, 20)
-    if (filter === 'chaotic')  return [...dominanceData].sort((a,b) => a.pct - b.pct).slice(0, 20)
+    if (filter === 'dominant') return [...dominanceData].sort((a, b) => b.pct - a.pct).slice(0, 20)
+    if (filter === 'chaotic') return [...dominanceData].sort((a, b) => a.pct - b.pct).slice(0, 20)
     return dominanceData
   }, [dominanceData, filter])
 
@@ -345,8 +384,8 @@ function DominanceLollipop({ data }) {
     if (!filtered.length || !svgRef.current) return
 
     const margin = { top: 20, right: 20, bottom: 48, left: 52 }
-    const W = dims.width  - margin.left - margin.right
-    const H = dims.height - margin.top  - margin.bottom
+    const W = dims.width - margin.left - margin.right
+    const H = dims.height - margin.top - margin.bottom
 
     const svg = d3.select(svgRef.current)
     svg.selectAll('*').remove()
@@ -405,10 +444,10 @@ function DominanceLollipop({ data }) {
       .attr('cy', d => yScale(d.pct))
 
     // Tooltip
-    const tooltip = d3.select('body').select('.d3-tooltip')
+    const tooltip = d3.select('#dynasty-tooltip')
 
     circles
-      .on('mouseenter', function(event, d) {
+      .on('mouseenter', function (event, d) {
         d3.select(this).attr('r', 8).attr('stroke', 'white').attr('stroke-width', 1.5)
         tooltip
           .style('opacity', 1)
@@ -420,12 +459,12 @@ function DominanceLollipop({ data }) {
             </div>
           `)
       })
-      .on('mousemove', function(event) {
+      .on('mousemove', function (event) {
         tooltip
-          .style('left', (event.pageX + 14) + 'px')
-          .style('top',  (event.pageY - 32) + 'px')
+          .style('left', (event.clientX + 14) + 'px')
+          .style('top', (event.clientY - 32) + 'px')
       })
-      .on('mouseleave', function() {
+      .on('mouseleave', function () {
         d3.select(this).attr('r', 5).attr('stroke', COLORS.carbon).attr('stroke-width', 1)
         tooltip.style('opacity', 0)
       })
@@ -472,9 +511,9 @@ function DominanceLollipop({ data }) {
       {/* Filter buttons */}
       <div style={{ display: 'flex', gap: '8px', marginBottom: '16px', flexWrap: 'wrap' }}>
         {[
-          { key: 'all',      label: 'ALL SEASONS' },
+          { key: 'all', label: 'ALL SEASONS' },
           { key: 'dominant', label: 'MOST DOMINANT' },
-          { key: 'chaotic',  label: 'MOST COMPETITIVE' },
+          { key: 'chaotic', label: 'MOST COMPETITIVE' },
         ].map(({ key, label }) => (
           <button
             key={key}
@@ -485,8 +524,8 @@ function DominanceLollipop({ data }) {
               fontSize: '10px',
               letterSpacing: '2px',
               background: filter === key ? COLORS.racingRed : 'transparent',
-              color:      filter === key ? 'white' : COLORS.steel,
-              border:     `1px solid ${filter === key ? COLORS.racingRed : COLORS.carbonBorder}`,
+              color: filter === key ? 'white' : COLORS.steel,
+              border: `1px solid ${filter === key ? COLORS.racingRed : COLORS.carbonBorder}`,
               cursor: 'pointer',
               transition: 'all 0.2s',
             }}
@@ -562,8 +601,8 @@ function ConstructorLegend({ selected, onChange }) {
           padding: '4px 12px',
           fontFamily: FONTS.mono, fontSize: '9px', letterSpacing: '2px',
           background: selected.length === 0 ? COLORS.racingRed : 'transparent',
-          color:      selected.length === 0 ? 'white' : COLORS.steel,
-          border:     `1px solid ${selected.length === 0 ? COLORS.racingRed : COLORS.carbonBorder}`,
+          color: selected.length === 0 ? 'white' : COLORS.steel,
+          border: `1px solid ${selected.length === 0 ? COLORS.racingRed : COLORS.carbonBorder}`,
           cursor: 'pointer', transition: 'all 0.2s',
         }}
       >
@@ -577,8 +616,8 @@ function ConstructorLegend({ selected, onChange }) {
             padding: '4px 12px',
             fontFamily: FONTS.mono, fontSize: '9px', letterSpacing: '2px',
             background: selected.includes(name) ? getColor(name) : 'transparent',
-            color:      selected.includes(name) ? COLORS.carbon : COLORS.steel,
-            border:     `1px solid ${selected.includes(name) ? getColor(name) : COLORS.carbonBorder}`,
+            color: selected.includes(name) ? COLORS.carbon : COLORS.steel,
+            border: `1px solid ${selected.includes(name) ? getColor(name) : COLORS.carbonBorder}`,
             cursor: 'pointer', transition: 'all 0.2s',
           }}
         >
@@ -592,8 +631,8 @@ function ConstructorLegend({ selected, onChange }) {
 // ─── Main Dynasty component ───────────────────────────────────────────────────
 export default function Dynasty() {
   const { data, loading } = useCSV('rq1_constructor_dominance.csv')
-  const [tab, setTab]              = useState('area')   // 'area' | 'dominance'
-  const [hoveredYear, setHovered]  = useState(null)
+  const [tab, setTab] = useState('area')   // 'area' | 'dominance'
+  const [hoveredYear, setHovered] = useState(null)
   const [selectedConstructors, setSelected] = useState([])
 
   // Story callout moments
@@ -617,6 +656,7 @@ export default function Dynasty() {
     >
       {/* D3 tooltip (shared, positioned by JS) */}
       <div
+        id="dynasty-tooltip"
         className="d3-tooltip chart-tooltip"
         style={{
           position: 'fixed', opacity: 0, zIndex: 999,
@@ -636,7 +676,7 @@ export default function Dynasty() {
           )}
         </div>
         <p className="section-body" style={{ marginBottom: '40px' }}>
-          Every era of F1 has had one team that rewrote the record books — and one that fell from grace trying to stop them.
+          Every era of F1 has had one team that rewrote the record books and one that fell from grace trying to stop them.
           Watch the dynasties rise and collapse as regulations reset the playing field.
         </p>
 
@@ -668,8 +708,8 @@ export default function Dynasty() {
         {/* Tab switcher */}
         <div style={{ display: 'flex', gap: '0', marginBottom: '24px', borderBottom: `1px solid ${COLORS.carbonBorder}` }}>
           {[
-            { key: 'area',       label: 'DYNASTY TIMELINE' },
-            { key: 'dominance',  label: 'DOMINANCE INDEX' },
+            { key: 'area', label: 'DYNASTY TIMELINE' },
+            { key: 'dominance', label: 'DOMINANCE INDEX' },
           ].map(({ key, label }) => (
             <button
               key={key}
@@ -680,8 +720,8 @@ export default function Dynasty() {
                 fontSize: '11px',
                 letterSpacing: '3px',
                 background: 'transparent',
-                color:      tab === key ? 'white' : COLORS.steel,
-                border:     'none',
+                color: tab === key ? 'white' : COLORS.steel,
+                border: 'none',
                 borderBottom: tab === key ? `2px solid ${COLORS.racingRed}` : '2px solid transparent',
                 cursor: 'pointer',
                 transition: 'all 0.2s',
@@ -724,7 +764,8 @@ export default function Dynasty() {
 
         {/* Bottom note */}
         <p style={{ fontFamily: FONTS.mono, fontSize: '10px', color: COLORS.asphalt, letterSpacing: '1.5px', marginTop: '16px' }}>
-          DATA: ERGAST API / FORMULA1-DATASETS · HOVER AREA CHART TO INSPECT YEAR · TOGGLE CONSTRUCTORS ABOVE
+          DATA: ERGAST API / FORMULA1-DATASETS · HOVER AREA CHART TO INSPECT YEAR · TOGGLE CONSTRUCTORS ABOVE<br />
+          * RENAULT INCLUDES LOTUS F1 (2012-2015, GOLD) AND ALPINE RACING (2021+, PINK) POINTS
         </p>
       </div>
     </section>
