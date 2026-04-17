@@ -1,0 +1,288 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── CSS Custom Properties ─────────────────────────────────────────────────── */
+:root {
+  --carbon:       #0a0a0a;
+  --carbon-mid:   #111111;
+  --carbon-light: #1a1a1a;
+  --carbon-border:#2a2a2a;
+  --racing-red:   #e8002d;
+  --red-hot:      #ff1e3c;
+  --silver:       #c0c0c0;
+  --steel:        #888888;
+  --font-display: 'Bebas Neue', cursive;
+  --font-body:    'DM Sans', sans-serif;
+  --font-mono:    'Orbitron', monospace;
+}
+
+/* ─── Reset & Base ───────────────────────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-snap-type: none;
+}
+
+body {
+  background: var(--carbon);
+  color: white;
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* ─── Background Grid ────────────────────────────────────────────────────────── */
+.bg-grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255,255,255,0.02) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,0.02) 1px, transparent 1px);
+  background-size: 60px 60px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* ─── Hero Styles ────────────────────────────────────────────────────────────── */
+.year-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  justify-content: center;
+  margin-bottom: clamp(12px, 2.5vh, 28px);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  letter-spacing: 6px;
+  color: var(--racing-red);
+  text-transform: uppercase;
+  position: relative;
+  z-index: 1;
+}
+.year-dash { color: var(--steel); }
+
+.hero-title-block {
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  padding: 0 24px;
+}
+
+.hero-title {
+  font-family: var(--font-display);
+  font-size: clamp(40px, min(14vw, 12vh), 160px);
+  line-height: 0.9;
+  letter-spacing: 4px;
+  color: white;
+  text-transform: uppercase;
+}
+.title-f1 {
+  color: var(--racing-red);
+  font-size: clamp(60px, min(18vw, 16vh), 200px);
+}
+.title-colon { color: var(--steel); }
+.title-years { color: white; }
+.title-of {
+  color: var(--silver);
+  font-size: clamp(24px, min(9vw, 8vh), 100px);
+  letter-spacing: 16px;
+}
+
+.hero-sub {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 2vw, 18px);
+  color: var(--silver);
+  margin-top: 24px;
+  line-height: 1.7;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+/* ─── Stats Row ──────────────────────────────────────────────────────────────── */
+.stats-row {
+  display: flex;
+  justify-content: center;
+  gap: clamp(16px, 3vw, 48px);
+  flex-wrap: wrap;
+  padding: clamp(20px, 4vh, 48px) 32px 0;
+  position: relative;
+  z-index: 1;
+}
+
+.stat-card {
+  text-align: center;
+  min-width: 100px;
+}
+
+.stat-value {
+  font-family: var(--font-mono);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  color: white;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+.stat-suffix {
+  color: var(--racing-red);
+  font-size: 0.7em;
+}
+.stat-label {
+  font-family: var(--font-body);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--steel);
+  margin-top: 6px;
+}
+
+/* ─── Ticker ─────────────────────────────────────────────────────────────────── */
+.ticker-track {
+  display: inline-block;
+  animation: ticker-scroll 35s linear infinite;
+  white-space: nowrap;
+}
+.ticker-track:hover { animation-play-state: paused; }
+
+@keyframes ticker-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+.ticker-item {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 3px;
+  color: var(--steel);
+  text-transform: uppercase;
+  padding: 0 8px;
+  transition: color 0.2s;
+}
+.ticker-item:hover { color: var(--silver); }
+
+.ticker-dot {
+  display: inline-block;
+  margin: 0 16px;
+  color: var(--racing-red);
+  font-size: 6px;
+  vertical-align: middle;
+}
+
+/* ─── Scroll CTA ─────────────────────────────────────────────────────────────── */
+.scroll-cta {
+  display: flex;
+  justify-content: center;
+  padding: clamp(20px, 4vh, 40px) 0 clamp(30px, 6vh, 60px);
+  position: relative;
+  z-index: 1;
+}
+
+.scroll-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--steel);
+  text-transform: uppercase;
+  transition: color 0.3s;
+  animation: bob 2.5s ease-in-out infinite;
+}
+.scroll-btn:hover { color: var(--silver); }
+
+@keyframes bob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+
+/* ─── Red edge accent line ───────────────────────────────────────────────────── */
+.red-edge-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    var(--racing-red) 20%,
+    var(--racing-red) 80%,
+    transparent 100%
+  );
+}
+
+/* ─── Section shared styles ──────────────────────────────────────────────────── */
+.section-eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 4px;
+  color: var(--racing-red);
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 6vw, 80px);
+  color: white;
+  letter-spacing: 3px;
+  line-height: 0.95;
+}
+
+.section-body {
+  font-family: var(--font-body);
+  font-size: clamp(14px, 1.8vw, 16px);
+  color: var(--silver);
+  line-height: 1.75;
+  font-weight: 300;
+  max-width: 560px;
+}
+
+/* ─── Chart tooltip shared ───────────────────────────────────────────────────── */
+.chart-tooltip {
+  background: rgba(17, 17, 17, 0.95);
+  border: 1px solid var(--carbon-border);
+  border-left: 3px solid var(--racing-red);
+  padding: 10px 14px;
+  font-family: var(--font-body);
+  font-size: 13px;
+  color: white;
+  pointer-events: none;
+  border-radius: 2px;
+  backdrop-filter: blur(8px);
+}
+
+.tooltip-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: var(--racing-red);
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+/* ─── Scrollbar ──────────────────────────────────────────────────────────────── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--carbon); }
+::-webkit-scrollbar-thumb { background: var(--carbon-border); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--racing-red); }
+
+/* ─── Responsive: hide nav links on mobile ───────────────────────────────────── */
+@media (max-width: 768px) {
+  .nav-links { display: none !important; }
+  .hamburger { display: block !important; }
+  .hidden-mobile { display: none; }
+}
+
+/* ─── Selection color ────────────────────────────────────────────────────────── */
+::selection {
+  background: var(--racing-red);
+  color: white;
+}
