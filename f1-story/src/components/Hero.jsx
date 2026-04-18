@@ -203,10 +203,40 @@ export default function Hero({ onScrollDown }) {
         overflow: 'hidden',
       }}
     >
-      {/* Background grid lines — subtle carbon fiber feel */}
-      <div className="bg-grid" aria-hidden="true" />
+      <style>
+        {`
+          @keyframes slowRotate {
+            0% { transform: scale(1) rotate(-1deg); }
+            50% { transform: scale(1.04) rotate(1deg); }
+            100% { transform: scale(1) rotate(-1deg); }
+          }
+          .hero-bg-image {
+            position: absolute;
+            top: -5%; left: -5%; right: -5%; bottom: -5%;
+            background-image: url('/f1_car_bg.png');
+            background-size: cover;
+            background-position: center 30%;
+            opacity: 0.25;
+            z-index: 0;
+            pointer-events: none;
+            animation: slowRotate 25s ease-in-out infinite;
+          }
+          .hero-content {
+            position: relative;
+            z-index: 1;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+          }
+        `}
+      </style>
+      <div className="hero-bg-image" aria-hidden="true" />
 
-      {/* Year badge */}
+      {/* Background grid lines — subtle carbon fiber feel */}
+      <div className="bg-grid" aria-hidden="true" style={{ zIndex: 0 }} />
+
+      <div className="hero-content">
+        {/* Year badge */}
       <div
         className="year-badge"
         style={{
@@ -289,6 +319,7 @@ export default function Hero({ onScrollDown }) {
 
       {/* Red accent line — left edge */}
       <div className="red-edge-line" aria-hidden="true" />
+      </div>
     </section>
   )
 }
