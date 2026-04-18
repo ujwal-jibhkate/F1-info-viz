@@ -172,9 +172,9 @@ function Ticker() {
 
 // ─── Main Hero component ──────────────────────────────────────────────────────
 export default function Hero({ onScrollDown }) {
-  const [started, setStarted]     = useState(false)
-  const [titleVisible, setTitle]  = useState(false)
-  const [subVisible, setSub]      = useState(false)
+  const [started, setStarted] = useState(false)
+  const [titleVisible, setTitle] = useState(false)
+  const [subVisible, setSub] = useState(false)
 
   useEffect(() => {
     // Stagger entrance animations
@@ -237,88 +237,88 @@ export default function Hero({ onScrollDown }) {
 
       <div className="hero-content">
         {/* Year badge */}
-      <div
-        className="year-badge"
-        style={{
-          opacity: titleVisible ? 1 : 0,
-          transition: 'opacity 0.8s ease',
-        }}
-      >
-        <span>1950</span>
-        <span className="year-dash">—</span>
-        <span>2025</span>
-      </div>
-
-      {/* Main title */}
-      <div className="hero-title-block">
-        <h1
-          className="hero-title"
+        <div
+          className="year-badge"
           style={{
             opacity: titleVisible ? 1 : 0,
-            transform: titleVisible ? 'translateY(0)' : 'translateY(40px)',
-            transition: 'opacity 0.9s ease 0.1s, transform 0.9s ease 0.1s',
+            transition: 'opacity 0.8s ease',
           }}
         >
-          <span className="title-f1">F1</span>
-          <span className="title-colon">:</span>
-          <br />
-          <span className="title-years">75 Years</span>
-          <br />
-          <span className="title-of">of Speed</span>
-        </h1>
+          <span>1950</span>
+          <span className="year-dash">—</span>
+          <span>2025</span>
+        </div>
 
-        <p
-          className="hero-sub"
+        {/* Main title */}
+        <div className="hero-title-block">
+          <h1
+            className="hero-title"
+            style={{
+              opacity: titleVisible ? 1 : 0,
+              transform: titleVisible ? 'translateY(0)' : 'translateY(40px)',
+              transition: 'opacity 0.9s ease 0.1s, transform 0.9s ease 0.1s',
+            }}
+          >
+            <span className="title-f1">F1</span>
+            <span className="title-colon">:</span>
+            <br />
+            <span className="title-years">75 Years</span>
+            <br />
+            <span className="title-of">of Speed</span>
+          </h1>
+
+          <p
+            className="hero-sub"
+            style={{
+              opacity: subVisible ? 1 : 0,
+              transform: subVisible ? 'translateY(0)' : 'translateY(20px)',
+              transition: 'opacity 0.8s ease, transform 0.8s ease',
+            }}
+          >
+            A data-driven story of dynasties, circuits, and the drivers
+            <br className="hidden-mobile" /> who shaped the fastest sport on Earth.
+          </p>
+        </div>
+
+        {/* Racing line SVG */}
+        <div className="racing-wrapper" style={{ display: 'flex', justifyContent: 'center', padding: 'clamp(5px, 2vh, 20px) 40px 0' }}>
+          <RacingLine />
+        </div>
+
+        {/* Stats row */}
+        <div className="stats-row">
+          {HERO_STATS.map((stat, i) => (
+            <StatCard key={stat.label} stat={stat} index={i} started={started} />
+          ))}
+        </div>
+
+        {/* Ticker */}
+        <div style={{ marginTop: 'clamp(10px, 4vh, 40px)' }}>
+          <Ticker />
+        </div>
+
+        {/* Scroll CTA */}
+        <div
+          className="scroll-cta"
           style={{
-            opacity: subVisible ? 1 : 0,
-            transform: subVisible ? 'translateY(0)' : 'translateY(20px)',
-            transition: 'opacity 0.8s ease, transform 0.8s ease',
+            opacity: started ? 1 : 0,
+            transition: 'opacity 1s ease 2.5s',
           }}
         >
-          A data-driven story of dynasties, circuits, and the drivers
-          <br className="hidden-mobile" /> who shaped the fastest sport on Earth.
-        </p>
-      </div>
+          <button
+            onClick={onScrollDown}
+            className="scroll-btn"
+            aria-label="Begin the story"
+          >
+            <span>BEGIN THE STORY</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M10 3v14M4 13l6 6 6-6" stroke={COLORS.racingRed} strokeWidth="2" strokeLinecap="round" />
+            </svg>
+          </button>
+        </div>
 
-      {/* Racing line SVG */}
-      <div className="racing-wrapper" style={{ display: 'flex', justifyContent: 'center', padding: 'clamp(5px, 2vh, 20px) 40px 0' }}>
-        <RacingLine />
-      </div>
-
-      {/* Stats row */}
-      <div className="stats-row">
-        {HERO_STATS.map((stat, i) => (
-          <StatCard key={stat.label} stat={stat} index={i} started={started} />
-        ))}
-      </div>
-
-      {/* Ticker */}
-      <div style={{ marginTop: 'clamp(10px, 4vh, 40px)' }}>
-        <Ticker />
-      </div>
-
-      {/* Scroll CTA */}
-      <div
-        className="scroll-cta"
-        style={{
-          opacity: started ? 1 : 0,
-          transition: 'opacity 1s ease 2.5s',
-        }}
-      >
-        <button
-          onClick={onScrollDown}
-          className="scroll-btn"
-          aria-label="Begin the story"
-        >
-          <span>BEGIN THE STORY</span>
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <path d="M10 3v14M4 13l6 6 6-6" stroke={COLORS.racingRed} strokeWidth="2" strokeLinecap="round" />
-          </svg>
-        </button>
-      </div>
-
-      {/* Red accent line — left edge */}
-      <div className="red-edge-line" aria-hidden="true" />
+        {/* Red accent line — left edge */}
+        <div className="red-edge-line" aria-hidden="true" />
       </div>
     </section>
   )

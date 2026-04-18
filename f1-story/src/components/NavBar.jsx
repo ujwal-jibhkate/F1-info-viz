@@ -5,7 +5,6 @@ const NAV_ITEMS = [
   { id: 'hero',       label: 'Start' },
   { id: 'dynasty',    label: 'Dynasties' },
   { id: 'grid',       label: 'The Grid' },
-  { id: 'chaos',      label: 'Chaos' },
   { id: 'network',    label: 'Network' },
   { id: 'conclusion', label: 'Finale' },
 ]

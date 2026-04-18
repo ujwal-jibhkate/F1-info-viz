@@ -290,7 +290,7 @@ function StackedAreaChart({ data, selectedConstructors, onHover, hoveredYear }) 
         const [mx] = d3.pointer(event)
         const year = Math.round(xScale.invert(mx))
         hoverLine.attr('x1', xScale(year)).attr('x2', xScale(year)).attr('opacity', 1)
-        onHover(year)
+        onHover({ year, x: event.clientX, y: event.clientY })
       })
       .on('mouseleave', () => {
         hoverLine.attr('opacity', 0)
@@ -545,7 +545,8 @@ function DominanceLollipop({ data }) {
 }
 
 // ─── Hover tooltip panel ──────────────────────────────────────────────────────
-function YearPanel({ year, data }) {
+function YearPanel({ hoverData, data }) {
+  const { year, x, y } = hoverData || {}
   const yearData = useMemo(() => {
     if (!year || !data.length) return []
     return data
@@ -558,6 +559,11 @@ function YearPanel({ year, data }) {
 
   return (
     <div style={{
+      position: 'fixed',
+      left: x + 20,
+      top: y - 20,
+      zIndex: 999,
+      pointerEvents: 'none',
       background: COLORS.carbonLight,
       border: `1px solid ${COLORS.carbonBorder}`,
       borderLeft: `3px solid ${COLORS.racingRed}`,
@@ -632,7 +638,7 @@ function ConstructorLegend({ selected, onChange }) {
 export default function Dynasty() {
   const { data, loading } = useCSV('rq1_constructor_dominance.csv')
   const [tab, setTab] = useState('area')   // 'area' | 'dominance'
-  const [hoveredYear, setHovered] = useState(null)
+  const [hoverData, setHoverData] = useState(null)
   const [selectedConstructors, setSelected] = useState([])
 
   // Story callout moments
@@ -664,16 +670,15 @@ export default function Dynasty() {
         }}
       />
 
+      <YearPanel hoverData={hoverData} data={data} />
+
       {/* Section header */}
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div className="section-eyebrow">Chapter 01</div>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', flexWrap: 'wrap', gap: '24px', marginBottom: '12px' }}>
           <h2 className="section-title">
-            CONSTRUCTOR<br />DYNASTIES
+            CONSTRUCTOR DYNASTIES
           </h2>
-          {hoveredYear && (
-            <YearPanel year={hoveredYear} data={data} />
-          )}
         </div>
         <p className="section-body" style={{ marginBottom: '40px' }}>
           Every era of F1 has had one team that rewrote the record books and one that fell from grace trying to stop them.
@@ -752,8 +757,8 @@ export default function Dynasty() {
               <StackedAreaChart
                 data={data}
                 selectedConstructors={selectedConstructors}
-                onHover={setHovered}
-                hoveredYear={hoveredYear}
+                onHover={setHoverData}
+                hoveredYear={hoverData}
               />
             )}
             {tab === 'dominance' && (

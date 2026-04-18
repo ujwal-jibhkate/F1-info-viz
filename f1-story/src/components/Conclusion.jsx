@@ -3,46 +3,46 @@ import { COLORS, FONTS } from '../styles/theme'
 
 const STAT_CARDS = [
   {
-    stat:    '93.8%',
-    label:   'McLaren, 1988',
-    front:   'Most Dominant Single Season',
-    back:    'Senna and Prost between them won 15 of 16 races. Only Monza escaped them — after they collided with each other.',
-    color:   COLORS.constructors?.McLaren || '#ff8000',
+    stat: '93.8%',
+    label: 'McLaren, 1988',
+    front: 'Most Dominant Single Season',
+    back: 'Senna and Prost between them won 15 of 16 races. Only Monza escaped them — after they collided with each other.',
+    color: COLORS.constructors?.McLaren || '#ff8000',
   },
   {
-    stat:    '25%',
-    label:   'F1, 1982',
-    front:   'Most Chaotic Season Ever',
-    back:    'Eleven different race winners in sixteen races. No team won more than a quarter of the season. Pure anarchy.',
-    color:   '#4ecdc4',
+    stat: '25%',
+    label: 'F1, 1982',
+    front: 'Most Chaotic Season Ever',
+    back: 'Eleven different race winners in sixteen races. No team won more than a quarter of the season. Pure anarchy.',
+    color: '#4ecdc4',
   },
   {
-    stat:    '8',
-    label:   'Mercedes, 2014–2021',
-    front:   'Consecutive Constructors\' Titles',
-    back:    'The longest dynasty in modern Formula 1. Built from the ashes of a team Honda abandoned for £1 in 2008.',
-    color:   COLORS.constructors?.Mercedes || '#00d2be',
+    stat: '8',
+    label: 'Mercedes, 2014–2021',
+    front: 'Consecutive Constructors\' Titles',
+    back: 'The longest dynasty in modern Formula 1. Built from the ashes of a team Honda abandoned for £1 in 2008.',
+    color: COLORS.constructors?.Mercedes || '#00d2be',
   },
   {
-    stat:    '1',
-    label:   'Brawn GP, 2009',
-    front:   'Seasons Raced. Zero Defeats.',
-    back:    'The only team in F1 history to enter the championship once and win it. They were unbeaten forever. Then they became Mercedes.',
-    color:   '#f5f5f5',
+    stat: '1',
+    label: 'Brawn GP, 2009',
+    front: 'Seasons Raced. Zero Defeats.',
+    back: 'The only team in F1 history to enter the championship once and win it. They were unbeaten forever. Then they became Mercedes.',
+    color: '#f5f5f5',
   },
   {
-    stat:    '47%',
-    label:   'Street Circuits',
-    front:   'Pole-to-Win Rate on Streets',
-    back:    'On street circuits, qualifying practically writes the result. At Monaco 2024 the top 10 in qualifying were the top 10 at the flag.',
-    color:   '#ff6b35',
+    stat: '47%',
+    label: 'Street Circuits',
+    front: 'Pole-to-Win Rate on Streets',
+    back: 'On street circuits, qualifying practically writes the result. At Monaco 2024 the top 10 in qualifying were the top 10 at the flag.',
+    color: '#ff6b35',
   },
   {
-    stat:    '103',
-    label:   'Lewis Hamilton',
-    front:   'Career Race Victories',
-    back:    '73 of those came with Mercedes. Then, in 2025, he put on red for the first time. Some edges in the network never fully break.',
-    color:   COLORS.constructors?.Ferrari || '#dc0000',
+    stat: '103',
+    label: 'Lewis Hamilton',
+    front: 'Career Race Victories',
+    back: '73 of those came with Mercedes. Then, in 2025, he put on red for the first time. Some edges in the network never fully break.',
+    color: COLORS.constructors?.Ferrari || '#dc0000',
   },
 ]
 
@@ -67,8 +67,8 @@ function StatCard({ card, index }) {
         flex: '1 1 280px',
         height: '220px',
         perspective: '1000px',
-        opacity:    visible ? 1 : 0,
-        transform:  visible ? 'translateY(0)' : 'translateY(32px)',
+        opacity: visible ? 1 : 0,
+        transform: visible ? 'translateY(0)' : 'translateY(32px)',
         transition: `opacity 0.6s ease ${index * 0.12}s, transform 0.6s ease ${index * 0.12}s`,
         cursor: 'pointer',
       }}
@@ -205,18 +205,18 @@ export default function Conclusion() {
           className="section-title"
           style={{
             marginBottom: '16px',
-            opacity:    titleVisible ? 1 : 0,
-            transform:  titleVisible ? 'translateY(0)' : 'translateY(30px)',
+            opacity: titleVisible ? 1 : 0,
+            transform: titleVisible ? 'translateY(0)' : 'translateY(30px)',
             transition: 'opacity 0.8s ease, transform 0.8s ease',
           }}
         >
-          THE DATA<br />NEVER LIES
+          THE DATA NEVER LIES
         </h2>
         <p
           className="section-body"
           style={{
             marginBottom: '56px',
-            opacity:    titleVisible ? 1 : 0,
+            opacity: titleVisible ? 1 : 0,
             transition: 'opacity 0.8s ease 0.3s',
           }}
         >
@@ -249,10 +249,12 @@ export default function Conclusion() {
           </p>
           <p style={{
             fontFamily: FONTS.body,
-            fontSize: '14px',
-            color: COLORS.steel,
-            marginTop: '16px',
+            fontSize: 'clamp(18px, 2.5vw, 24px)',
+            color: COLORS.racingRed,
+            marginTop: '24px',
             fontStyle: 'italic',
+            fontWeight: 600,
+            lineHeight: 1.4,
           }}>
             A regulation change. A bankrupt engine supplier. Or a prodigy in a car nobody believed in.
           </p>
@@ -277,7 +279,7 @@ export default function Conclusion() {
           textAlign: 'center',
           fontFamily: FONTS.mono,
           fontSize: '10px',
-          color: COLORS.asphalt,
+          color: COLORS.white,
           letterSpacing: '2px',
         }}>
           ILS-Z637 INFORMATION VISUALIZATION · INDIANA UNIVERSITY · SP26 ·

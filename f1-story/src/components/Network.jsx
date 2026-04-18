@@ -417,7 +417,7 @@ export default function Network() {
       <div style={{ maxWidth: '1200px', margin: '0 auto' }}>
         <div className="section-eyebrow">Chapter 03</div>
         <h2 className="section-title" style={{ marginBottom: '16px' }}>
-          THE WEB OF<br />AMBITION
+          THE WEB OF AMBITION
         </h2>
         <p className="section-body" style={{ marginBottom: '32px' }}>
           {networkStats.drivers} drivers. {networkStats.constructors} constructors. Every edge is a season spent together.
