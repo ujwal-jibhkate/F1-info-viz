@@ -38,10 +38,10 @@ const STAT_CARDS = [
     color: '#ff6b35',
   },
   {
-    stat: '103',
+    stat: '105',
     label: 'Lewis Hamilton',
     front: 'Career Race Victories',
-    back: '73 of those came with Mercedes. Then, in 2025, he put on red for the first time. Some edges in the network never fully break.',
+    back: '84 of those came with Mercedes. Then, in 2025, he put on red for the first time. Some edges in the network never fully break.',
     color: COLORS.constructors?.Ferrari || '#dc0000',
   },
 ]

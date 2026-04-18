@@ -338,6 +338,7 @@ Boy Lunger,March,1977,0
 Boy Lunger,Penske,1976,0
 Brausch Niemann,Lotus-Ford,1963,0
 Brausch Niemann,Lotus-Ford,1965,0
+Brendon Hartley,Scuderia Toro Rosso Honda,2018,0
 Brendon Hartley,Toro Rosso,2017,0
 Brett Lunger,Ensign,1978,0
 Brett Lunger,Hesketh,1975,0
@@ -454,6 +455,7 @@ Carlos Sainz,Ferrari,2024,2
 Carlos Sainz,McLaren,2019,0
 Carlos Sainz,McLaren,2020,0
 Carlos Sainz,Renault,2017,0
+Carlos Sainz,Renault,2018,0
 Carlos Sainz,Toro Rosso,2015,0
 Carlos Sainz,Toro Rosso,2016,0
 Carlos Sainz,Toro Rosso,2017,0
@@ -474,6 +476,7 @@ Charles Leclerc,Ferrari,2023,0
 Charles Leclerc,Ferrari,2024,3
 Charles Leclerc,Ferrari,2025,0
 Charles Leclerc,Ferrari,2026,0
+Charles Leclerc,Sauber,2018,0
 Charles Pic,Caterham,2013,0
 Charles Pic,Marussia,2012,0
 Charles Pozzi,Talbot-Lago,1950,0
@@ -615,6 +618,7 @@ Daniel Ricciardo,Red Bull,2014,3
 Daniel Ricciardo,Red Bull,2015,0
 Daniel Ricciardo,Red Bull,2016,1
 Daniel Ricciardo,Red Bull,2017,1
+Daniel Ricciardo,Red Bull,2018,2
 Daniel Ricciardo,Renault,2019,0
 Daniel Ricciardo,Renault,2020,0
 Daniel Ricciardo,Toro Rosso,2012,0
@@ -897,6 +901,7 @@ Esteban Ocon,Alpine,2022,0
 Esteban Ocon,Alpine,2023,0
 Esteban Ocon,Alpine,2024,0
 Esteban Ocon,Force India,2017,0
+Esteban Ocon,Force India,2018,0
 Esteban Ocon,Haas,2025,0
 Esteban Ocon,Haas,2026,0
 Esteban Ocon,Manor Marussia,2016,0
@@ -949,6 +954,7 @@ Fernando Alonso,McLaren,2007,4
 Fernando Alonso,McLaren,2015,0
 Fernando Alonso,McLaren,2016,0
 Fernando Alonso,McLaren,2017,0
+Fernando Alonso,McLaren,2018,0
 Fernando Alonso,Minardi,2001,0
 Fernando Alonso,Renault,2003,1
 Fernando Alonso,Renault,2004,0
@@ -2016,6 +2022,7 @@ Kenny Acheson,RAM,1985,0
 Kevin Cogan,Tyrrell,1981,0
 Kevin Cogan,Williams,1980,0
 Kevin Magnussen,Haas,2017,0
+Kevin Magnussen,Haas,2018,0
 Kevin Magnussen,Haas,2019,0
 Kevin Magnussen,Haas,2020,0
 Kevin Magnussen,Haas,2022,0
@@ -2029,6 +2036,7 @@ Kimi Antonelli,Mercedes,2026,0
 Kimi Raikkönen,Alfa Romeo,2019,0
 Kimi Raikkönen,Alfa Romeo,2020,0
 Kimi Raikkönen,Alfa Romeo,2021,0
+Kimi Raikkönen,Ferrari,2018,1
 Kimi Raikkönen,Haas,2019,0
 Kimi RÌ_ikkÌ¦nen,Ferrari,2007,6
 Kimi RÌ_ikkÌ¦nen,Ferrari,2008,2
@@ -2068,6 +2076,7 @@ Lance Stroll,Aston Martin,2026,0
 Lance Stroll,Racing Point BWT,2019,0
 Lance Stroll,Racing Point BWT,2020,0
 Lance Stroll,Williams,2017,0
+Lance Stroll,Williams,2018,0
 Lando Norris,McLaren,2019,0
 Lando Norris,McLaren,2020,0
 Lando Norris,McLaren,2021,0
@@ -2114,6 +2123,7 @@ Lewis Hamilton,Mercedes,2014,11
 Lewis Hamilton,Mercedes,2015,10
 Lewis Hamilton,Mercedes,2016,10
 Lewis Hamilton,Mercedes,2017,9
+Lewis Hamilton,Mercedes,2018,11
 Lewis Hamilton,Mercedes,2019,11
 Lewis Hamilton,Mercedes,2020,11
 Lewis Hamilton,Mercedes,2021,8
@@ -2236,6 +2246,7 @@ Marcus Ericsson,Caterham,2014,0
 Marcus Ericsson,Sauber,2015,0
 Marcus Ericsson,Sauber,2016,0
 Marcus Ericsson,Sauber,2017,0
+Marcus Ericsson,Sauber,2018,0
 Maria de Filippis,Maserati,1958,0
 Maria de Filippis,Porsche,1959,0
 Mario Andretti,Alfa Romeo,1981,0
@@ -2346,6 +2357,7 @@ Max Chilton,Marussia,2014,0
 Max Jean,March-Ford,1971,0
 Max Verstappen,Red Bull,2016,1
 Max Verstappen,Red Bull,2017,2
+Max Verstappen,Red Bull,2018,2
 Max Verstappen,Red Bull,2019,3
 Max Verstappen,Red Bull,2020,2
 Max Verstappen,Red Bull,2021,10
@@ -2543,6 +2555,7 @@ Nico Hulkenberg,Audi,2026,0
 Nico Hulkenberg,Haas,2023,0
 Nico Hulkenberg,Haas,2024,0
 Nico Hulkenberg,Racing Point BWT,2020,0
+Nico Hulkenberg,Renault,2018,0
 Nico Hulkenberg,Renault,2019,0
 Nico Hulkenberg,Sauber,2025,0
 Nico HÌ_lkenberg,Force India,2012,0
@@ -2899,6 +2912,7 @@ Pierre Gasly,RB,2020,1
 Pierre Gasly,RB,2021,0
 Pierre Gasly,RB,2022,0
 Pierre Gasly,Red Bull,2019,0
+Pierre Gasly,Scuderia Toro Rosso Honda,2018,0
 Pierre Gasly,Scuderia Toro Rosso Honda,2019,0
 Pierre Gasly,Toro Rosso,2017,0
 Pierre Levegh,Talbot-Lago,1950,0
@@ -3104,6 +3118,7 @@ Rolf Stommelen,March,1972,0
 Rolf Stommelen,Surtees,1971,0
 Romain Grosjean,Haas,2016,0
 Romain Grosjean,Haas,2017,0
+Romain Grosjean,Haas,2018,0
 Romain Grosjean,Haas,2019,0
 Romain Grosjean,Haas,2020,0
 Romain Grosjean,Lotus F1,2012,0
@@ -3208,6 +3223,7 @@ Sebastian Vettel,Aston Martin,2022,0
 Sebastian Vettel,Ferrari,2015,3
 Sebastian Vettel,Ferrari,2016,0
 Sebastian Vettel,Ferrari,2017,5
+Sebastian Vettel,Ferrari,2018,5
 Sebastian Vettel,Ferrari,2019,1
 Sebastian Vettel,Ferrari,2020,0
 Sebastian Vettel,Red Bull,2009,4
@@ -3219,10 +3235,12 @@ Sebastian Vettel,Red Bull,2014,0
 Sebastian Vettel,Sauber,2007,0
 Sebastian Vettel,Toro Rosso,2007,0
 Sebastian Vettel,Toro Rosso,2008,1
+Sergey Sirotkin,Williams,2018,0
 Sergio Mantovani,Maserati,1953,0
 Sergio Mantovani,Maserati,1954,0
 Sergio Mantovani,Maserati,1955,0
 Sergio Perez,Cadillac,2026,0
+Sergio Perez,Force India,2018,0
 Sergio Perez,Racing Point BWT,2019,0
 Sergio Perez,Racing Point BWT,2020,1
 Sergio Perez,Red Bull,2021,1
@@ -3294,6 +3312,7 @@ Stirling Moss,Vanwall,1957,3
 Stirling Moss,Vanwall,1958,3
 Stoffel Vandoorne,McLaren,2016,0
 Stoffel Vandoorne,McLaren,2017,0
+Stoffel Vandoorne,McLaren,2018,0
 Stuart Lewis-Evans,Connaught,1957,0
 Stuart Lewis-Evans,Vanwall,1957,0
 Stuart Lewis-Evans,Vanwall,1958,0
@@ -3465,6 +3484,7 @@ Valtteri Bottas,Alfa Romeo,2022,0
 Valtteri Bottas,Alfa Romeo,2023,0
 Valtteri Bottas,Cadillac,2026,0
 Valtteri Bottas,Mercedes,2017,3
+Valtteri Bottas,Mercedes,2018,0
 Valtteri Bottas,Mercedes,2019,4
 Valtteri Bottas,Mercedes,2020,2
 Valtteri Bottas,Mercedes,2021,1

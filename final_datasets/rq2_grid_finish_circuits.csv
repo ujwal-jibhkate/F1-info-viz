@@ -22210,6 +22210,350 @@ Year,Race Name,Circuit Name,Driver,Constructor,Grid Position,Finish Position,Poi
 2017,Abu Dhabi GP,Yas Marina Circuit,Lance Stroll,Williams,15.0,18.0,0.0,Historical (1950-2017),Permanent Circuit
 2017,Abu Dhabi GP,Yas Marina Circuit,Carlos Sainz,Renault,12.0,19.0,0.0,Historical (1950-2017),Permanent Circuit
 2017,Abu Dhabi GP,Yas Marina Circuit,Daniel Ricciardo,Red Bull,4.0,20.0,0.0,Historical (1950-2017),Permanent Circuit
+2018,Australian GP,Australia,Sebastian Vettel,Ferrari,3.0,1.0,25.0,Modern (2018),Permanent Circuit
+2018,Australian GP,Australia,Lewis Hamilton,Mercedes,1.0,2.0,18.0,Modern (2018),Permanent Circuit
+2018,Australian GP,Australia,Kimi Raikkönen,Ferrari,2.0,3.0,15.0,Modern (2018),Permanent Circuit
+2018,Australian GP,Australia,Daniel Ricciardo,Red Bull,8.0,4.0,12.0,Modern (2018),Permanent Circuit
+2018,Australian GP,Australia,Fernando Alonso,McLaren,10.0,5.0,10.0,Modern (2018),Permanent Circuit
+2018,Australian GP,Australia,Max Verstappen,Red Bull,4.0,6.0,8.0,Modern (2018),Permanent Circuit
+2018,Australian GP,Australia,Nico Hulkenberg,Renault,7.0,7.0,6.0,Modern (2018),Permanent Circuit
+2018,Australian GP,Australia,Valtteri Bottas,Mercedes,15.0,8.0,4.0,Modern (2018),Permanent Circuit
+2018,Australian GP,Australia,Stoffel Vandoorne,McLaren,11.0,9.0,2.0,Modern (2018),Permanent Circuit
+2018,Australian GP,Australia,Carlos Sainz,Renault,9.0,10.0,1.0,Modern (2018),Permanent Circuit
+2018,Australian GP,Australia,Sergio Perez,Force India,12.0,11.0,0.0,Modern (2018),Permanent Circuit
+2018,Australian GP,Australia,Esteban Ocon,Force India,14.0,12.0,0.0,Modern (2018),Permanent Circuit
+2018,Australian GP,Australia,Charles Leclerc,Sauber,18.0,13.0,0.0,Modern (2018),Permanent Circuit
+2018,Australian GP,Australia,Lance Stroll,Williams,13.0,14.0,0.0,Modern (2018),Permanent Circuit
+2018,Australian GP,Australia,Brendon Hartley,Scuderia Toro Rosso Honda,16.0,15.0,0.0,Modern (2018),Permanent Circuit
+2018,Bahrain GP,Bahrain,Sebastian Vettel,Ferrari,1.0,1.0,25.0,Modern (2018),Permanent Circuit
+2018,Bahrain GP,Bahrain,Valtteri Bottas,Mercedes,3.0,2.0,18.0,Modern (2018),Permanent Circuit
+2018,Bahrain GP,Bahrain,Lewis Hamilton,Mercedes,9.0,3.0,15.0,Modern (2018),Permanent Circuit
+2018,Bahrain GP,Bahrain,Pierre Gasly,Scuderia Toro Rosso Honda,5.0,4.0,12.0,Modern (2018),Permanent Circuit
+2018,Bahrain GP,Bahrain,Kevin Magnussen,Haas,6.0,5.0,10.0,Modern (2018),Permanent Circuit
+2018,Bahrain GP,Bahrain,Nico Hulkenberg,Renault,7.0,6.0,8.0,Modern (2018),Permanent Circuit
+2018,Bahrain GP,Bahrain,Fernando Alonso,McLaren,13.0,7.0,6.0,Modern (2018),Permanent Circuit
+2018,Bahrain GP,Bahrain,Stoffel Vandoorne,McLaren,14.0,8.0,4.0,Modern (2018),Permanent Circuit
+2018,Bahrain GP,Bahrain,Marcus Ericsson,Sauber,17.0,9.0,2.0,Modern (2018),Permanent Circuit
+2018,Bahrain GP,Bahrain,Esteban Ocon,Force India,8.0,10.0,1.0,Modern (2018),Permanent Circuit
+2018,Bahrain GP,Bahrain,Carlos Sainz,Renault,10.0,11.0,0.0,Modern (2018),Permanent Circuit
+2018,Bahrain GP,Bahrain,Charles Leclerc,Sauber,19.0,12.0,0.0,Modern (2018),Permanent Circuit
+2018,Bahrain GP,Bahrain,Romain Grosjean,Haas,16.0,13.0,0.0,Modern (2018),Permanent Circuit
+2018,Bahrain GP,Bahrain,Lance Stroll,Williams,20.0,14.0,0.0,Modern (2018),Permanent Circuit
+2018,Bahrain GP,Bahrain,Sergey Sirotkin,Williams,18.0,15.0,0.0,Modern (2018),Permanent Circuit
+2018,Bahrain GP,Bahrain,Sergio Perez,Force India,12.0,16.0,0.0,Modern (2018),Permanent Circuit
+2018,Bahrain GP,Bahrain,Brendon Hartley,Scuderia Toro Rosso Honda,11.0,17.0,0.0,Modern (2018),Permanent Circuit
+2018,Chinese GP,China,Daniel Ricciardo,Red Bull,6.0,1.0,25.0,Modern (2018),Permanent Circuit
+2018,Chinese GP,China,Valtteri Bottas,Mercedes,3.0,2.0,18.0,Modern (2018),Permanent Circuit
+2018,Chinese GP,China,Kimi Raikkönen,Ferrari,2.0,3.0,15.0,Modern (2018),Permanent Circuit
+2018,Chinese GP,China,Lewis Hamilton,Mercedes,4.0,4.0,12.0,Modern (2018),Permanent Circuit
+2018,Chinese GP,China,Max Verstappen,Red Bull,5.0,5.0,10.0,Modern (2018),Permanent Circuit
+2018,Chinese GP,China,Nico Hulkenberg,Renault,7.0,6.0,8.0,Modern (2018),Permanent Circuit
+2018,Chinese GP,China,Fernando Alonso,McLaren,13.0,7.0,6.0,Modern (2018),Permanent Circuit
+2018,Chinese GP,China,Sebastian Vettel,Ferrari,1.0,8.0,4.0,Modern (2018),Permanent Circuit
+2018,Chinese GP,China,Carlos Sainz,Renault,9.0,9.0,2.0,Modern (2018),Permanent Circuit
+2018,Chinese GP,China,Kevin Magnussen,Haas,11.0,10.0,1.0,Modern (2018),Permanent Circuit
+2018,Chinese GP,China,Esteban Ocon,Force India,12.0,11.0,0.0,Modern (2018),Permanent Circuit
+2018,Chinese GP,China,Sergio Perez,Force India,8.0,12.0,0.0,Modern (2018),Permanent Circuit
+2018,Chinese GP,China,Stoffel Vandoorne,McLaren,14.0,13.0,0.0,Modern (2018),Permanent Circuit
+2018,Chinese GP,China,Lance Stroll,Williams,18.0,14.0,0.0,Modern (2018),Permanent Circuit
+2018,Chinese GP,China,Sergey Sirotkin,Williams,16.0,15.0,0.0,Modern (2018),Permanent Circuit
+2018,Chinese GP,China,Marcus Ericsson,Sauber,20.0,16.0,0.0,Modern (2018),Permanent Circuit
+2018,Chinese GP,China,Romain Grosjean,Haas,10.0,17.0,0.0,Modern (2018),Permanent Circuit
+2018,Chinese GP,China,Pierre Gasly,Scuderia Toro Rosso Honda,17.0,18.0,0.0,Modern (2018),Permanent Circuit
+2018,Chinese GP,China,Charles Leclerc,Sauber,19.0,19.0,0.0,Modern (2018),Permanent Circuit
+2018,Chinese GP,China,Brendon Hartley,Scuderia Toro Rosso Honda,15.0,20.0,0.0,Modern (2018),Permanent Circuit
+2018,Azerbaijan GP,Azerbaijan,Lewis Hamilton,Mercedes,2.0,1.0,25.0,Modern (2018),Permanent Circuit
+2018,Azerbaijan GP,Azerbaijan,Kimi Raikkönen,Ferrari,6.0,2.0,18.0,Modern (2018),Permanent Circuit
+2018,Azerbaijan GP,Azerbaijan,Sergio Perez,Force India,8.0,3.0,15.0,Modern (2018),Permanent Circuit
+2018,Azerbaijan GP,Azerbaijan,Sebastian Vettel,Ferrari,1.0,4.0,12.0,Modern (2018),Permanent Circuit
+2018,Azerbaijan GP,Azerbaijan,Carlos Sainz,Renault,9.0,5.0,10.0,Modern (2018),Permanent Circuit
+2018,Azerbaijan GP,Azerbaijan,Charles Leclerc,Sauber,13.0,6.0,8.0,Modern (2018),Permanent Circuit
+2018,Azerbaijan GP,Azerbaijan,Fernando Alonso,McLaren,12.0,7.0,6.0,Modern (2018),Permanent Circuit
+2018,Azerbaijan GP,Azerbaijan,Lance Stroll,Williams,10.0,8.0,4.0,Modern (2018),Permanent Circuit
+2018,Azerbaijan GP,Azerbaijan,Stoffel Vandoorne,McLaren,16.0,9.0,2.0,Modern (2018),Permanent Circuit
+2018,Azerbaijan GP,Azerbaijan,Brendon Hartley,Scuderia Toro Rosso Honda,19.0,10.0,1.0,Modern (2018),Permanent Circuit
+2018,Azerbaijan GP,Azerbaijan,Marcus Ericsson,Sauber,18.0,11.0,0.0,Modern (2018),Permanent Circuit
+2018,Azerbaijan GP,Azerbaijan,Pierre Gasly,Scuderia Toro Rosso Honda,17.0,12.0,0.0,Modern (2018),Permanent Circuit
+2018,Azerbaijan GP,Azerbaijan,Kevin Magnussen,Haas,15.0,13.0,0.0,Modern (2018),Permanent Circuit
+2018,Azerbaijan GP,Azerbaijan,Valtteri Bottas,Mercedes,3.0,14.0,0.0,Modern (2018),Permanent Circuit
+2018,Spanish GP,Spain,Lewis Hamilton,Mercedes,1.0,1.0,25.0,Modern (2018),Permanent Circuit
+2018,Spanish GP,Spain,Valtteri Bottas,Mercedes,2.0,2.0,18.0,Modern (2018),Permanent Circuit
+2018,Spanish GP,Spain,Max Verstappen,Red Bull,5.0,3.0,15.0,Modern (2018),Permanent Circuit
+2018,Spanish GP,Spain,Sebastian Vettel,Ferrari,3.0,4.0,12.0,Modern (2018),Permanent Circuit
+2018,Spanish GP,Spain,Daniel Ricciardo,Red Bull,6.0,5.0,10.0,Modern (2018),Permanent Circuit
+2018,Spanish GP,Spain,Kevin Magnussen,Haas,7.0,6.0,8.0,Modern (2018),Permanent Circuit
+2018,Spanish GP,Spain,Carlos Sainz,Renault,9.0,7.0,6.0,Modern (2018),Permanent Circuit
+2018,Spanish GP,Spain,Fernando Alonso,McLaren,8.0,8.0,4.0,Modern (2018),Permanent Circuit
+2018,Spanish GP,Spain,Sergio Perez,Force India,15.0,9.0,2.0,Modern (2018),Permanent Circuit
+2018,Spanish GP,Spain,Charles Leclerc,Sauber,14.0,10.0,1.0,Modern (2018),Permanent Circuit
+2018,Spanish GP,Spain,Lance Stroll,Williams,18.0,11.0,0.0,Modern (2018),Permanent Circuit
+2018,Spanish GP,Spain,Brendon Hartley,Scuderia Toro Rosso Honda,20.0,12.0,0.0,Modern (2018),Permanent Circuit
+2018,Spanish GP,Spain,Marcus Ericsson,Sauber,17.0,13.0,0.0,Modern (2018),Permanent Circuit
+2018,Spanish GP,Spain,Sergey Sirotkin,Williams,19.0,14.0,0.0,Modern (2018),Permanent Circuit
+2018,Monaco GP,Monaco,Daniel Ricciardo,Red Bull,1.0,1.0,25.0,Modern (2018),Street Circuit
+2018,Monaco GP,Monaco,Sebastian Vettel,Ferrari,2.0,2.0,18.0,Modern (2018),Street Circuit
+2018,Monaco GP,Monaco,Lewis Hamilton,Mercedes,3.0,3.0,15.0,Modern (2018),Street Circuit
+2018,Monaco GP,Monaco,Kimi Raikkönen,Ferrari,4.0,4.0,12.0,Modern (2018),Street Circuit
+2018,Monaco GP,Monaco,Valtteri Bottas,Mercedes,5.0,5.0,10.0,Modern (2018),Street Circuit
+2018,Monaco GP,Monaco,Esteban Ocon,Force India,6.0,6.0,8.0,Modern (2018),Street Circuit
+2018,Monaco GP,Monaco,Pierre Gasly,Scuderia Toro Rosso Honda,10.0,7.0,6.0,Modern (2018),Street Circuit
+2018,Monaco GP,Monaco,Nico Hulkenberg,Renault,11.0,8.0,4.0,Modern (2018),Street Circuit
+2018,Monaco GP,Monaco,Max Verstappen,Red Bull,20.0,9.0,2.0,Modern (2018),Street Circuit
+2018,Monaco GP,Monaco,Carlos Sainz,Renault,8.0,10.0,1.0,Modern (2018),Street Circuit
+2018,Monaco GP,Monaco,Marcus Ericsson,Sauber,16.0,11.0,0.0,Modern (2018),Street Circuit
+2018,Monaco GP,Monaco,Sergio Perez,Force India,9.0,12.0,0.0,Modern (2018),Street Circuit
+2018,Monaco GP,Monaco,Kevin Magnussen,Haas,19.0,13.0,0.0,Modern (2018),Street Circuit
+2018,Monaco GP,Monaco,Stoffel Vandoorne,McLaren,12.0,14.0,0.0,Modern (2018),Street Circuit
+2018,Monaco GP,Monaco,Romain Grosjean,Haas,18.0,15.0,0.0,Modern (2018),Street Circuit
+2018,Monaco GP,Monaco,Sergey Sirotkin,Williams,13.0,16.0,0.0,Modern (2018),Street Circuit
+2018,Monaco GP,Monaco,Lance Stroll,Williams,17.0,17.0,0.0,Modern (2018),Street Circuit
+2018,Monaco GP,Monaco,Charles Leclerc,Sauber,14.0,18.0,0.0,Modern (2018),Street Circuit
+2018,Monaco GP,Monaco,Brendon Hartley,Scuderia Toro Rosso Honda,15.0,19.0,0.0,Modern (2018),Street Circuit
+2018,Canadian GP,Canada,Sebastian Vettel,Ferrari,1.0,1.0,25.0,Modern (2018),Permanent Circuit
+2018,Canadian GP,Canada,Valtteri Bottas,Mercedes,2.0,2.0,18.0,Modern (2018),Permanent Circuit
+2018,Canadian GP,Canada,Max Verstappen,Red Bull,3.0,3.0,15.0,Modern (2018),Permanent Circuit
+2018,Canadian GP,Canada,Daniel Ricciardo,Red Bull,6.0,4.0,12.0,Modern (2018),Permanent Circuit
+2018,Canadian GP,Canada,Lewis Hamilton,Mercedes,4.0,5.0,10.0,Modern (2018),Permanent Circuit
+2018,Canadian GP,Canada,Kimi Raikkönen,Ferrari,5.0,6.0,8.0,Modern (2018),Permanent Circuit
+2018,Canadian GP,Canada,Nico Hulkenberg,Renault,7.0,7.0,6.0,Modern (2018),Permanent Circuit
+2018,Canadian GP,Canada,Carlos Sainz,Renault,9.0,8.0,4.0,Modern (2018),Permanent Circuit
+2018,Canadian GP,Canada,Esteban Ocon,Force India,8.0,9.0,2.0,Modern (2018),Permanent Circuit
+2018,Canadian GP,Canada,Charles Leclerc,Sauber,13.0,10.0,1.0,Modern (2018),Permanent Circuit
+2018,Canadian GP,Canada,Pierre Gasly,Scuderia Toro Rosso Honda,19.0,11.0,0.0,Modern (2018),Permanent Circuit
+2018,Canadian GP,Canada,Romain Grosjean,Haas,20.0,12.0,0.0,Modern (2018),Permanent Circuit
+2018,Canadian GP,Canada,Kevin Magnussen,Haas,11.0,13.0,0.0,Modern (2018),Permanent Circuit
+2018,Canadian GP,Canada,Sergio Perez,Force India,10.0,14.0,0.0,Modern (2018),Permanent Circuit
+2018,Canadian GP,Canada,Marcus Ericsson,Sauber,18.0,15.0,0.0,Modern (2018),Permanent Circuit
+2018,Canadian GP,Canada,Stoffel Vandoorne,McLaren,15.0,16.0,0.0,Modern (2018),Permanent Circuit
+2018,Canadian GP,Canada,Sergey Sirotkin,Williams,17.0,17.0,0.0,Modern (2018),Permanent Circuit
+2018,French GP,France,Lewis Hamilton,Mercedes,1.0,1.0,25.0,Modern (2018),Permanent Circuit
+2018,French GP,France,Max Verstappen,Red Bull,4.0,2.0,18.0,Modern (2018),Permanent Circuit
+2018,French GP,France,Kimi Raikkönen,Ferrari,6.0,3.0,15.0,Modern (2018),Permanent Circuit
+2018,French GP,France,Daniel Ricciardo,Red Bull,5.0,4.0,12.0,Modern (2018),Permanent Circuit
+2018,French GP,France,Sebastian Vettel,Ferrari,3.0,5.0,10.0,Modern (2018),Permanent Circuit
+2018,French GP,France,Kevin Magnussen,Haas,9.0,6.0,8.0,Modern (2018),Permanent Circuit
+2018,French GP,France,Valtteri Bottas,Mercedes,2.0,7.0,6.0,Modern (2018),Permanent Circuit
+2018,French GP,France,Carlos Sainz,Renault,7.0,8.0,4.0,Modern (2018),Permanent Circuit
+2018,French GP,France,Nico Hulkenberg,Renault,12.0,9.0,2.0,Modern (2018),Permanent Circuit
+2018,French GP,France,Charles Leclerc,Sauber,8.0,10.0,1.0,Modern (2018),Permanent Circuit
+2018,French GP,France,Romain Grosjean,Haas,10.0,11.0,0.0,Modern (2018),Permanent Circuit
+2018,French GP,France,Stoffel Vandoorne,McLaren,17.0,12.0,0.0,Modern (2018),Permanent Circuit
+2018,French GP,France,Marcus Ericsson,Sauber,15.0,13.0,0.0,Modern (2018),Permanent Circuit
+2018,French GP,France,Brendon Hartley,Scuderia Toro Rosso Honda,20.0,14.0,0.0,Modern (2018),Permanent Circuit
+2018,French GP,France,Sergey Sirotkin,Williams,18.0,15.0,0.0,Modern (2018),Permanent Circuit
+2018,French GP,France,Fernando Alonso,McLaren,16.0,16.0,0.0,Modern (2018),Permanent Circuit
+2018,French GP,France,Lance Stroll,Williams,19.0,17.0,0.0,Modern (2018),Permanent Circuit
+2018,Austrian GP,Austria,Max Verstappen,Red Bull,4.0,1.0,25.0,Modern (2018),Permanent Circuit
+2018,Austrian GP,Austria,Kimi Raikkönen,Ferrari,3.0,2.0,18.0,Modern (2018),Permanent Circuit
+2018,Austrian GP,Austria,Sebastian Vettel,Ferrari,6.0,3.0,15.0,Modern (2018),Permanent Circuit
+2018,Austrian GP,Austria,Romain Grosjean,Haas,5.0,4.0,12.0,Modern (2018),Permanent Circuit
+2018,Austrian GP,Austria,Kevin Magnussen,Haas,8.0,5.0,10.0,Modern (2018),Permanent Circuit
+2018,Austrian GP,Austria,Esteban Ocon,Force India,11.0,6.0,8.0,Modern (2018),Permanent Circuit
+2018,Austrian GP,Austria,Sergio Perez,Force India,15.0,7.0,6.0,Modern (2018),Permanent Circuit
+2018,Austrian GP,Austria,Fernando Alonso,McLaren,20.0,8.0,4.0,Modern (2018),Permanent Circuit
+2018,Austrian GP,Austria,Charles Leclerc,Sauber,17.0,9.0,2.0,Modern (2018),Permanent Circuit
+2018,Austrian GP,Austria,Marcus Ericsson,Sauber,18.0,10.0,1.0,Modern (2018),Permanent Circuit
+2018,Austrian GP,Austria,Pierre Gasly,Scuderia Toro Rosso Honda,12.0,11.0,0.0,Modern (2018),Permanent Circuit
+2018,Austrian GP,Austria,Carlos Sainz,Renault,9.0,12.0,0.0,Modern (2018),Permanent Circuit
+2018,Austrian GP,Austria,Sergey Sirotkin,Williams,16.0,13.0,0.0,Modern (2018),Permanent Circuit
+2018,Austrian GP,Austria,Lance Stroll,Williams,13.0,14.0,0.0,Modern (2018),Permanent Circuit
+2018,Austrian GP,Austria,Stoffel Vandoorne,McLaren,14.0,15.0,0.0,Modern (2018),Permanent Circuit
+2018,British GP,Great Britain,Sebastian Vettel,Ferrari,2.0,1.0,25.0,Modern (2018),Permanent Circuit
+2018,British GP,Great Britain,Lewis Hamilton,Mercedes,1.0,2.0,18.0,Modern (2018),Permanent Circuit
+2018,British GP,Great Britain,Kimi Raikkönen,Ferrari,3.0,3.0,15.0,Modern (2018),Permanent Circuit
+2018,British GP,Great Britain,Valtteri Bottas,Mercedes,4.0,4.0,12.0,Modern (2018),Permanent Circuit
+2018,British GP,Great Britain,Daniel Ricciardo,Red Bull,6.0,5.0,10.0,Modern (2018),Permanent Circuit
+2018,British GP,Great Britain,Nico Hulkenberg,Renault,11.0,6.0,8.0,Modern (2018),Permanent Circuit
+2018,British GP,Great Britain,Esteban Ocon,Force India,10.0,7.0,6.0,Modern (2018),Permanent Circuit
+2018,British GP,Great Britain,Fernando Alonso,McLaren,13.0,8.0,4.0,Modern (2018),Permanent Circuit
+2018,British GP,Great Britain,Kevin Magnussen,Haas,7.0,9.0,2.0,Modern (2018),Permanent Circuit
+2018,British GP,Great Britain,Sergio Perez,Force India,12.0,10.0,1.0,Modern (2018),Permanent Circuit
+2018,British GP,Great Britain,Stoffel Vandoorne,McLaren,17.0,11.0,0.0,Modern (2018),Permanent Circuit
+2018,British GP,Great Britain,Lance Stroll,Williams,18.0,12.0,0.0,Modern (2018),Permanent Circuit
+2018,British GP,Great Britain,Pierre Gasly,Scuderia Toro Rosso Honda,14.0,13.0,0.0,Modern (2018),Permanent Circuit
+2018,British GP,Great Britain,Sergey Sirotkin,Williams,19.0,14.0,0.0,Modern (2018),Permanent Circuit
+2018,British GP,Great Britain,Max Verstappen,Red Bull,5.0,15.0,0.0,Modern (2018),Permanent Circuit
+2018,German GP,Germany,Lewis Hamilton,Mercedes,14.0,1.0,25.0,Modern (2018),Permanent Circuit
+2018,German GP,Germany,Valtteri Bottas,Mercedes,2.0,2.0,18.0,Modern (2018),Permanent Circuit
+2018,German GP,Germany,Kimi Raikkönen,Ferrari,3.0,3.0,15.0,Modern (2018),Permanent Circuit
+2018,German GP,Germany,Max Verstappen,Red Bull,4.0,4.0,12.0,Modern (2018),Permanent Circuit
+2018,German GP,Germany,Nico Hulkenberg,Renault,7.0,5.0,10.0,Modern (2018),Permanent Circuit
+2018,German GP,Germany,Romain Grosjean,Haas,6.0,6.0,8.0,Modern (2018),Permanent Circuit
+2018,German GP,Germany,Sergio Perez,Force India,10.0,7.0,6.0,Modern (2018),Permanent Circuit
+2018,German GP,Germany,Esteban Ocon,Force India,15.0,8.0,4.0,Modern (2018),Permanent Circuit
+2018,German GP,Germany,Marcus Ericsson,Sauber,13.0,9.0,2.0,Modern (2018),Permanent Circuit
+2018,German GP,Germany,Brendon Hartley,Scuderia Toro Rosso Honda,16.0,10.0,1.0,Modern (2018),Permanent Circuit
+2018,German GP,Germany,Kevin Magnussen,Haas,5.0,11.0,0.0,Modern (2018),Permanent Circuit
+2018,German GP,Germany,Carlos Sainz,Renault,8.0,12.0,0.0,Modern (2018),Permanent Circuit
+2018,German GP,Germany,Stoffel Vandoorne,McLaren,18.0,13.0,0.0,Modern (2018),Permanent Circuit
+2018,German GP,Germany,Pierre Gasly,Scuderia Toro Rosso Honda,20.0,14.0,0.0,Modern (2018),Permanent Circuit
+2018,German GP,Germany,Charles Leclerc,Sauber,9.0,15.0,0.0,Modern (2018),Permanent Circuit
+2018,German GP,Germany,Fernando Alonso,McLaren,11.0,16.0,0.0,Modern (2018),Permanent Circuit
+2018,Hungarian GP,Hungary,Lewis Hamilton,Mercedes,1.0,1.0,25.0,Modern (2018),Permanent Circuit
+2018,Hungarian GP,Hungary,Sebastian Vettel,Ferrari,4.0,2.0,18.0,Modern (2018),Permanent Circuit
+2018,Hungarian GP,Hungary,Kimi Raikkönen,Ferrari,3.0,3.0,15.0,Modern (2018),Permanent Circuit
+2018,Hungarian GP,Hungary,Daniel Ricciardo,Red Bull,12.0,4.0,12.0,Modern (2018),Permanent Circuit
+2018,Hungarian GP,Hungary,Valtteri Bottas,Mercedes,2.0,5.0,10.0,Modern (2018),Permanent Circuit
+2018,Hungarian GP,Hungary,Pierre Gasly,Scuderia Toro Rosso Honda,6.0,6.0,8.0,Modern (2018),Permanent Circuit
+2018,Hungarian GP,Hungary,Kevin Magnussen,Haas,9.0,7.0,6.0,Modern (2018),Permanent Circuit
+2018,Hungarian GP,Hungary,Fernando Alonso,McLaren,11.0,8.0,4.0,Modern (2018),Permanent Circuit
+2018,Hungarian GP,Hungary,Carlos Sainz,Renault,5.0,9.0,2.0,Modern (2018),Permanent Circuit
+2018,Hungarian GP,Hungary,Romain Grosjean,Haas,10.0,10.0,1.0,Modern (2018),Permanent Circuit
+2018,Hungarian GP,Hungary,Brendon Hartley,Scuderia Toro Rosso Honda,8.0,11.0,0.0,Modern (2018),Permanent Circuit
+2018,Hungarian GP,Hungary,Nico Hulkenberg,Renault,13.0,12.0,0.0,Modern (2018),Permanent Circuit
+2018,Hungarian GP,Hungary,Esteban Ocon,Force India,17.0,13.0,0.0,Modern (2018),Permanent Circuit
+2018,Hungarian GP,Hungary,Sergio Perez,Force India,18.0,14.0,0.0,Modern (2018),Permanent Circuit
+2018,Hungarian GP,Hungary,Marcus Ericsson,Sauber,14.0,15.0,0.0,Modern (2018),Permanent Circuit
+2018,Hungarian GP,Hungary,Sergey Sirotkin,Williams,19.0,16.0,0.0,Modern (2018),Permanent Circuit
+2018,Hungarian GP,Hungary,Lance Stroll,Williams,20.0,17.0,0.0,Modern (2018),Permanent Circuit
+2018,Belgian GP,Belgium,Sebastian Vettel,Ferrari,2.0,1.0,25.0,Modern (2018),Permanent Circuit
+2018,Belgian GP,Belgium,Lewis Hamilton,Mercedes,1.0,2.0,18.0,Modern (2018),Permanent Circuit
+2018,Belgian GP,Belgium,Max Verstappen,Red Bull,7.0,3.0,15.0,Modern (2018),Permanent Circuit
+2018,Belgian GP,Belgium,Valtteri Bottas,Mercedes,17.0,4.0,12.0,Modern (2018),Permanent Circuit
+2018,Belgian GP,Belgium,Sergio Perez,Force India,4.0,5.0,10.0,Modern (2018),Permanent Circuit
+2018,Belgian GP,Belgium,Esteban Ocon,Force India,3.0,6.0,8.0,Modern (2018),Permanent Circuit
+2018,Belgian GP,Belgium,Romain Grosjean,Haas,5.0,7.0,6.0,Modern (2018),Permanent Circuit
+2018,Belgian GP,Belgium,Kevin Magnussen,Haas,9.0,8.0,4.0,Modern (2018),Permanent Circuit
+2018,Belgian GP,Belgium,Pierre Gasly,Scuderia Toro Rosso Honda,10.0,9.0,2.0,Modern (2018),Permanent Circuit
+2018,Belgian GP,Belgium,Marcus Ericsson,Sauber,13.0,10.0,1.0,Modern (2018),Permanent Circuit
+2018,Belgian GP,Belgium,Carlos Sainz,Renault,19.0,11.0,0.0,Modern (2018),Permanent Circuit
+2018,Belgian GP,Belgium,Sergey Sirotkin,Williams,15.0,12.0,0.0,Modern (2018),Permanent Circuit
+2018,Belgian GP,Belgium,Lance Stroll,Williams,16.0,13.0,0.0,Modern (2018),Permanent Circuit
+2018,Belgian GP,Belgium,Brendon Hartley,Scuderia Toro Rosso Honda,11.0,14.0,0.0,Modern (2018),Permanent Circuit
+2018,Belgian GP,Belgium,Stoffel Vandoorne,McLaren,20.0,15.0,0.0,Modern (2018),Permanent Circuit
+2018,Italian GP,Italy,Lewis Hamilton,Mercedes,3.0,1.0,25.0,Modern (2018),Permanent Circuit
+2018,Italian GP,Italy,Kimi Raikkönen,Ferrari,1.0,2.0,18.0,Modern (2018),Permanent Circuit
+2018,Italian GP,Italy,Valtteri Bottas,Mercedes,4.0,3.0,15.0,Modern (2018),Permanent Circuit
+2018,Italian GP,Italy,Sebastian Vettel,Ferrari,2.0,4.0,12.0,Modern (2018),Permanent Circuit
+2018,Italian GP,Italy,Max Verstappen,Red Bull,5.0,5.0,10.0,Modern (2018),Permanent Circuit
+2018,Italian GP,Italy,Esteban Ocon,Force India,8.0,6.0,8.0,Modern (2018),Permanent Circuit
+2018,Italian GP,Italy,Sergio Perez,Force India,14.0,7.0,6.0,Modern (2018),Permanent Circuit
+2018,Italian GP,Italy,Carlos Sainz,Renault,7.0,8.0,4.0,Modern (2018),Permanent Circuit
+2018,Italian GP,Italy,Lance Stroll,Williams,10.0,9.0,2.0,Modern (2018),Permanent Circuit
+2018,Italian GP,Italy,Sergey Sirotkin,Williams,12.0,10.0,1.0,Modern (2018),Permanent Circuit
+2018,Italian GP,Italy,Charles Leclerc,Sauber,15.0,11.0,0.0,Modern (2018),Permanent Circuit
+2018,Italian GP,Italy,Stoffel Vandoorne,McLaren,17.0,12.0,0.0,Modern (2018),Permanent Circuit
+2018,Italian GP,Italy,Nico Hulkenberg,Renault,20.0,13.0,0.0,Modern (2018),Permanent Circuit
+2018,Italian GP,Italy,Pierre Gasly,Scuderia Toro Rosso Honda,9.0,14.0,0.0,Modern (2018),Permanent Circuit
+2018,Italian GP,Italy,Marcus Ericsson,Sauber,18.0,15.0,0.0,Modern (2018),Permanent Circuit
+2018,Italian GP,Italy,Kevin Magnussen,Haas,11.0,16.0,0.0,Modern (2018),Permanent Circuit
+2018,Singapore GP,Singapore,Lewis Hamilton,Mercedes,1.0,1.0,25.0,Modern (2018),Permanent Circuit
+2018,Singapore GP,Singapore,Max Verstappen,Red Bull,2.0,2.0,18.0,Modern (2018),Permanent Circuit
+2018,Singapore GP,Singapore,Sebastian Vettel,Ferrari,3.0,3.0,15.0,Modern (2018),Permanent Circuit
+2018,Singapore GP,Singapore,Valtteri Bottas,Mercedes,4.0,4.0,12.0,Modern (2018),Permanent Circuit
+2018,Singapore GP,Singapore,Kimi Raikkönen,Ferrari,5.0,5.0,10.0,Modern (2018),Permanent Circuit
+2018,Singapore GP,Singapore,Daniel Ricciardo,Red Bull,6.0,6.0,8.0,Modern (2018),Permanent Circuit
+2018,Singapore GP,Singapore,Fernando Alonso,McLaren,11.0,7.0,6.0,Modern (2018),Permanent Circuit
+2018,Singapore GP,Singapore,Carlos Sainz,Renault,12.0,8.0,4.0,Modern (2018),Permanent Circuit
+2018,Singapore GP,Singapore,Charles Leclerc,Sauber,13.0,9.0,2.0,Modern (2018),Permanent Circuit
+2018,Singapore GP,Singapore,Nico Hulkenberg,Renault,10.0,10.0,1.0,Modern (2018),Permanent Circuit
+2018,Singapore GP,Singapore,Marcus Ericsson,Sauber,14.0,11.0,0.0,Modern (2018),Permanent Circuit
+2018,Singapore GP,Singapore,Stoffel Vandoorne,McLaren,18.0,12.0,0.0,Modern (2018),Permanent Circuit
+2018,Singapore GP,Singapore,Pierre Gasly,Scuderia Toro Rosso Honda,15.0,13.0,0.0,Modern (2018),Permanent Circuit
+2018,Singapore GP,Singapore,Lance Stroll,Williams,20.0,14.0,0.0,Modern (2018),Permanent Circuit
+2018,Singapore GP,Singapore,Romain Grosjean,Haas,8.0,15.0,0.0,Modern (2018),Permanent Circuit
+2018,Singapore GP,Singapore,Sergio Perez,Force India,7.0,16.0,0.0,Modern (2018),Permanent Circuit
+2018,Singapore GP,Singapore,Brendon Hartley,Scuderia Toro Rosso Honda,17.0,17.0,0.0,Modern (2018),Permanent Circuit
+2018,Singapore GP,Singapore,Kevin Magnussen,Haas,16.0,18.0,0.0,Modern (2018),Permanent Circuit
+2018,Singapore GP,Singapore,Sergey Sirotkin,Williams,19.0,19.0,0.0,Modern (2018),Permanent Circuit
+2018,Russian GP,Russia,Lewis Hamilton,Mercedes,2.0,1.0,25.0,Modern (2018),Permanent Circuit
+2018,Russian GP,Russia,Valtteri Bottas,Mercedes,1.0,2.0,18.0,Modern (2018),Permanent Circuit
+2018,Russian GP,Russia,Sebastian Vettel,Ferrari,3.0,3.0,15.0,Modern (2018),Permanent Circuit
+2018,Russian GP,Russia,Kimi Raikkönen,Ferrari,4.0,4.0,12.0,Modern (2018),Permanent Circuit
+2018,Russian GP,Russia,Max Verstappen,Red Bull,19.0,5.0,10.0,Modern (2018),Permanent Circuit
+2018,Russian GP,Russia,Daniel Ricciardo,Red Bull,18.0,6.0,8.0,Modern (2018),Permanent Circuit
+2018,Russian GP,Russia,Charles Leclerc,Sauber,7.0,7.0,6.0,Modern (2018),Permanent Circuit
+2018,Russian GP,Russia,Kevin Magnussen,Haas,5.0,8.0,4.0,Modern (2018),Permanent Circuit
+2018,Russian GP,Russia,Esteban Ocon,Force India,6.0,9.0,2.0,Modern (2018),Permanent Circuit
+2018,Russian GP,Russia,Sergio Perez,Force India,8.0,10.0,1.0,Modern (2018),Permanent Circuit
+2018,Russian GP,Russia,Romain Grosjean,Haas,9.0,11.0,0.0,Modern (2018),Permanent Circuit
+2018,Russian GP,Russia,Nico Hulkenberg,Renault,12.0,12.0,0.0,Modern (2018),Permanent Circuit
+2018,Russian GP,Russia,Marcus Ericsson,Sauber,10.0,13.0,0.0,Modern (2018),Permanent Circuit
+2018,Russian GP,Russia,Fernando Alonso,McLaren,16.0,14.0,0.0,Modern (2018),Permanent Circuit
+2018,Russian GP,Russia,Lance Stroll,Williams,14.0,15.0,0.0,Modern (2018),Permanent Circuit
+2018,Russian GP,Russia,Stoffel Vandoorne,McLaren,15.0,16.0,0.0,Modern (2018),Permanent Circuit
+2018,Russian GP,Russia,Carlos Sainz,Renault,11.0,17.0,0.0,Modern (2018),Permanent Circuit
+2018,Russian GP,Russia,Sergey Sirotkin,Williams,13.0,18.0,0.0,Modern (2018),Permanent Circuit
+2018,Japanese GP,Japan,Lewis Hamilton,Mercedes,1.0,1.0,25.0,Modern (2018),Permanent Circuit
+2018,Japanese GP,Japan,Valtteri Bottas,Mercedes,2.0,2.0,18.0,Modern (2018),Permanent Circuit
+2018,Japanese GP,Japan,Max Verstappen,Red Bull,3.0,3.0,15.0,Modern (2018),Permanent Circuit
+2018,Japanese GP,Japan,Daniel Ricciardo,Red Bull,15.0,4.0,12.0,Modern (2018),Permanent Circuit
+2018,Japanese GP,Japan,Kimi Raikkönen,Ferrari,4.0,5.0,10.0,Modern (2018),Permanent Circuit
+2018,Japanese GP,Japan,Sebastian Vettel,Ferrari,8.0,6.0,8.0,Modern (2018),Permanent Circuit
+2018,Japanese GP,Japan,Sergio Perez,Force India,9.0,7.0,6.0,Modern (2018),Permanent Circuit
+2018,Japanese GP,Japan,Romain Grosjean,Haas,5.0,8.0,4.0,Modern (2018),Permanent Circuit
+2018,Japanese GP,Japan,Esteban Ocon,Force India,11.0,9.0,2.0,Modern (2018),Permanent Circuit
+2018,Japanese GP,Japan,Carlos Sainz,Renault,13.0,10.0,1.0,Modern (2018),Permanent Circuit
+2018,Japanese GP,Japan,Pierre Gasly,Scuderia Toro Rosso Honda,7.0,11.0,0.0,Modern (2018),Permanent Circuit
+2018,Japanese GP,Japan,Marcus Ericsson,Sauber,20.0,12.0,0.0,Modern (2018),Permanent Circuit
+2018,Japanese GP,Japan,Brendon Hartley,Scuderia Toro Rosso Honda,6.0,13.0,0.0,Modern (2018),Permanent Circuit
+2018,Japanese GP,Japan,Fernando Alonso,McLaren,18.0,14.0,0.0,Modern (2018),Permanent Circuit
+2018,Japanese GP,Japan,Stoffel Vandoorne,McLaren,19.0,15.0,0.0,Modern (2018),Permanent Circuit
+2018,Japanese GP,Japan,Sergey Sirotkin,Williams,17.0,16.0,0.0,Modern (2018),Permanent Circuit
+2018,Japanese GP,Japan,Lance Stroll,Williams,14.0,17.0,0.0,Modern (2018),Permanent Circuit
+2018,United States GP,United States,Kimi Raikkönen,Ferrari,2.0,1.0,25.0,Modern (2018),Permanent Circuit
+2018,United States GP,United States,Max Verstappen,Red Bull,18.0,2.0,18.0,Modern (2018),Permanent Circuit
+2018,United States GP,United States,Lewis Hamilton,Mercedes,1.0,3.0,15.0,Modern (2018),Permanent Circuit
+2018,United States GP,United States,Sebastian Vettel,Ferrari,5.0,4.0,12.0,Modern (2018),Permanent Circuit
+2018,United States GP,United States,Valtteri Bottas,Mercedes,3.0,5.0,10.0,Modern (2018),Permanent Circuit
+2018,United States GP,United States,Nico Hulkenberg,Renault,7.0,6.0,8.0,Modern (2018),Permanent Circuit
+2018,United States GP,United States,Carlos Sainz,Renault,11.0,7.0,6.0,Modern (2018),Permanent Circuit
+2018,United States GP,United States,Sergio Perez,Force India,10.0,8.0,4.0,Modern (2018),Permanent Circuit
+2018,United States GP,United States,Brendon Hartley,Scuderia Toro Rosso Honda,20.0,9.0,2.0,Modern (2018),Permanent Circuit
+2018,United States GP,United States,Marcus Ericsson,Sauber,16.0,10.0,1.0,Modern (2018),Permanent Circuit
+2018,United States GP,United States,Stoffel Vandoorne,McLaren,17.0,11.0,0.0,Modern (2018),Permanent Circuit
+2018,United States GP,United States,Pierre Gasly,Scuderia Toro Rosso Honda,19.0,12.0,0.0,Modern (2018),Permanent Circuit
+2018,United States GP,United States,Sergey Sirotkin,Williams,14.0,13.0,0.0,Modern (2018),Permanent Circuit
+2018,United States GP,United States,Lance Stroll,Williams,15.0,14.0,0.0,Modern (2018),Permanent Circuit
+2018,Mexican GP,Mexico,Max Verstappen,Red Bull,2.0,1.0,25.0,Modern (2018),Permanent Circuit
+2018,Mexican GP,Mexico,Sebastian Vettel,Ferrari,4.0,2.0,18.0,Modern (2018),Permanent Circuit
+2018,Mexican GP,Mexico,Kimi Raikkönen,Ferrari,6.0,3.0,15.0,Modern (2018),Permanent Circuit
+2018,Mexican GP,Mexico,Lewis Hamilton,Mercedes,3.0,4.0,12.0,Modern (2018),Permanent Circuit
+2018,Mexican GP,Mexico,Valtteri Bottas,Mercedes,5.0,5.0,10.0,Modern (2018),Permanent Circuit
+2018,Mexican GP,Mexico,Nico Hulkenberg,Renault,7.0,6.0,8.0,Modern (2018),Permanent Circuit
+2018,Mexican GP,Mexico,Charles Leclerc,Sauber,9.0,7.0,6.0,Modern (2018),Permanent Circuit
+2018,Mexican GP,Mexico,Stoffel Vandoorne,McLaren,15.0,8.0,4.0,Modern (2018),Permanent Circuit
+2018,Mexican GP,Mexico,Marcus Ericsson,Sauber,10.0,9.0,2.0,Modern (2018),Permanent Circuit
+2018,Mexican GP,Mexico,Pierre Gasly,Scuderia Toro Rosso Honda,20.0,10.0,1.0,Modern (2018),Permanent Circuit
+2018,Mexican GP,Mexico,Esteban Ocon,Force India,11.0,11.0,0.0,Modern (2018),Permanent Circuit
+2018,Mexican GP,Mexico,Lance Stroll,Williams,17.0,12.0,0.0,Modern (2018),Permanent Circuit
+2018,Mexican GP,Mexico,Sergey Sirotkin,Williams,19.0,13.0,0.0,Modern (2018),Permanent Circuit
+2018,Mexican GP,Mexico,Brendon Hartley,Scuderia Toro Rosso Honda,14.0,14.0,0.0,Modern (2018),Permanent Circuit
+2018,Mexican GP,Mexico,Kevin Magnussen,Haas,16.0,15.0,0.0,Modern (2018),Permanent Circuit
+2018,Mexican GP,Mexico,Romain Grosjean,Haas,18.0,16.0,0.0,Modern (2018),Permanent Circuit
+2018,Brazilian GP,Brazil,Lewis Hamilton,Mercedes,1.0,1.0,25.0,Modern (2018),Permanent Circuit
+2018,Brazilian GP,Brazil,Max Verstappen,Red Bull,5.0,2.0,18.0,Modern (2018),Permanent Circuit
+2018,Brazilian GP,Brazil,Kimi Raikkönen,Ferrari,4.0,3.0,15.0,Modern (2018),Permanent Circuit
+2018,Brazilian GP,Brazil,Daniel Ricciardo,Red Bull,11.0,4.0,12.0,Modern (2018),Permanent Circuit
+2018,Brazilian GP,Brazil,Valtteri Bottas,Mercedes,3.0,5.0,10.0,Modern (2018),Permanent Circuit
+2018,Brazilian GP,Brazil,Sebastian Vettel,Ferrari,2.0,6.0,8.0,Modern (2018),Permanent Circuit
+2018,Brazilian GP,Brazil,Charles Leclerc,Sauber,7.0,7.0,6.0,Modern (2018),Permanent Circuit
+2018,Brazilian GP,Brazil,Romain Grosjean,Haas,8.0,8.0,4.0,Modern (2018),Permanent Circuit
+2018,Brazilian GP,Brazil,Kevin Magnussen,Haas,10.0,9.0,2.0,Modern (2018),Permanent Circuit
+2018,Brazilian GP,Brazil,Sergio Perez,Force India,12.0,10.0,1.0,Modern (2018),Permanent Circuit
+2018,Brazilian GP,Brazil,Brendon Hartley,Scuderia Toro Rosso Honda,16.0,11.0,0.0,Modern (2018),Permanent Circuit
+2018,Brazilian GP,Brazil,Carlos Sainz,Renault,15.0,12.0,0.0,Modern (2018),Permanent Circuit
+2018,Brazilian GP,Brazil,Pierre Gasly,Scuderia Toro Rosso Honda,9.0,13.0,0.0,Modern (2018),Permanent Circuit
+2018,Brazilian GP,Brazil,Esteban Ocon,Force India,18.0,14.0,0.0,Modern (2018),Permanent Circuit
+2018,Brazilian GP,Brazil,Stoffel Vandoorne,McLaren,20.0,15.0,0.0,Modern (2018),Permanent Circuit
+2018,Brazilian GP,Brazil,Sergey Sirotkin,Williams,14.0,16.0,0.0,Modern (2018),Permanent Circuit
+2018,Brazilian GP,Brazil,Fernando Alonso,McLaren,17.0,17.0,0.0,Modern (2018),Permanent Circuit
+2018,Brazilian GP,Brazil,Lance Stroll,Williams,19.0,18.0,0.0,Modern (2018),Permanent Circuit
+2018,Abu Dhabi GP,Abu Dhabi,Lewis Hamilton,Mercedes,1.0,1.0,25.0,Modern (2018),Permanent Circuit
+2018,Abu Dhabi GP,Abu Dhabi,Sebastian Vettel,Ferrari,3.0,2.0,18.0,Modern (2018),Permanent Circuit
+2018,Abu Dhabi GP,Abu Dhabi,Max Verstappen,Red Bull,6.0,3.0,15.0,Modern (2018),Permanent Circuit
+2018,Abu Dhabi GP,Abu Dhabi,Daniel Ricciardo,Red Bull,5.0,4.0,12.0,Modern (2018),Permanent Circuit
+2018,Abu Dhabi GP,Abu Dhabi,Valtteri Bottas,Mercedes,2.0,5.0,10.0,Modern (2018),Permanent Circuit
+2018,Abu Dhabi GP,Abu Dhabi,Carlos Sainz,Renault,11.0,6.0,8.0,Modern (2018),Permanent Circuit
+2018,Abu Dhabi GP,Abu Dhabi,Charles Leclerc,Sauber,8.0,7.0,6.0,Modern (2018),Permanent Circuit
+2018,Abu Dhabi GP,Abu Dhabi,Sergio Perez,Force India,14.0,8.0,4.0,Modern (2018),Permanent Circuit
+2018,Abu Dhabi GP,Abu Dhabi,Romain Grosjean,Haas,7.0,9.0,2.0,Modern (2018),Permanent Circuit
+2018,Abu Dhabi GP,Abu Dhabi,Kevin Magnussen,Haas,13.0,10.0,1.0,Modern (2018),Permanent Circuit
+2018,Abu Dhabi GP,Abu Dhabi,Fernando Alonso,McLaren,15.0,11.0,0.0,Modern (2018),Permanent Circuit
+2018,Abu Dhabi GP,Abu Dhabi,Brendon Hartley,Scuderia Toro Rosso Honda,16.0,12.0,0.0,Modern (2018),Permanent Circuit
+2018,Abu Dhabi GP,Abu Dhabi,Lance Stroll,Williams,20.0,13.0,0.0,Modern (2018),Permanent Circuit
+2018,Abu Dhabi GP,Abu Dhabi,Stoffel Vandoorne,McLaren,18.0,14.0,0.0,Modern (2018),Permanent Circuit
+2018,Abu Dhabi GP,Abu Dhabi,Sergey Sirotkin,Williams,19.0,15.0,0.0,Modern (2018),Permanent Circuit
 2019,Australian GP,Australia,Valtteri Bottas,Mercedes,2.0,1.0,26.0,Modern (2019),Permanent Circuit
 2019,Australian GP,Australia,Lewis Hamilton,Mercedes,1.0,2.0,18.0,Modern (2019),Permanent Circuit
 2019,Australian GP,Australia,Max Verstappen,Red Bull,4.0,3.0,15.0,Modern (2019),Permanent Circuit

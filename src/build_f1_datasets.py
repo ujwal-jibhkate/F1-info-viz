@@ -43,20 +43,20 @@ hist_df = hist_df.rename(columns={
 hist_df['Dataset'] = 'Historical (1950-2017)'
 hist_df = hist_df[['Year', 'Race Name', 'Circuit Name', 'Driver', 'Constructor', 'Grid Position', 'Finish Position', 'Points', 'Dataset']]
 
-# 2. LOAD MODERN DATA (2019 - 2026)
+# 2. LOAD MODERN DATA (2018 - 2026)
 print("Loading modern data...")
 modern_dfs = []
-for year in range(2019, 2027):
+for year in range(2018, 2027):
     # Try finding files
-    pattern1 = os.path.join(MODERN_DIR, f"*formula1_{year}season_raceResults.csv")
-    pattern2 = os.path.join(MODERN_DIR, f"*Formula1_{year}season_raceResults.csv")
-    pattern3 = os.path.join(MODERN_DIR, f"*Formula1_{year}Season_RaceResults.csv")
+    pattern1 = os.path.join(MODERN_DIR, "**", f"*formula1_{year}season_raceResults.csv")
+    pattern2 = os.path.join(MODERN_DIR, "**", f"*Formula1_{year}season_raceResults.csv")
+    pattern3 = os.path.join(MODERN_DIR, "**", f"*Formula1_{year}Season_RaceResults.csv")
     
-    files = glob.glob(pattern1) + glob.glob(pattern2) + glob.glob(pattern3)
+    files = glob.glob(pattern1, recursive=True) + glob.glob(pattern2, recursive=True) + glob.glob(pattern3, recursive=True)
 
     if not files:
-        pattern = os.path.join(MODERN_DIR, f"*{year}*ace*esults.csv")
-        files = glob.glob(pattern)
+        pattern = os.path.join(MODERN_DIR, "**", f"*{year}*ace*esults.csv")
+        files = glob.glob(pattern, recursive=True)
         if not files:
             continue
     
@@ -70,8 +70,8 @@ for year in range(2019, 2027):
         df['Year'] = year
         
         # Calendar linking for modern circuits
-        cal_pattern = os.path.join(MODERN_DIR, f"*{year}*alendar.csv")
-        cal_files = glob.glob(cal_pattern)
+        cal_pattern = os.path.join(MODERN_DIR, "**", f"*{year}*alendar.csv")
+        cal_files = glob.glob(cal_pattern, recursive=True)
         
         track_col = 'Track' if 'Track' in df.columns else 'Grand Prix'
         
