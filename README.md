@@ -10,7 +10,7 @@
 **Submission Link:** [https://f1-info-viz.vercel.app/](https://f1-info-viz.vercel.app/)  
 **GitHub Repo:** [https://github.com/ujwal-jibhkate/F1-info-viz](https://github.com/ujwal-jibhkate/F1-info-viz)
 
-**Authors:** Mohit Mahajan, Ujwal Jibhkate, and Tushar Khatri  
+**Authors:** Ujwal Jibhkate, Mohit Mahajan, and Tushar Khatri  
 **Institution:** Luddy School of Informatics, Computing, and Engineering, Indiana University  
 **Course:** ILS-Z637: Information Visualization (SP26) | Dr. Rongqian Ma  
 **Date:** April 17, 2026
