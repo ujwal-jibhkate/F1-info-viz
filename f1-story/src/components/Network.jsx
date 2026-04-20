@@ -419,9 +419,13 @@ export default function Network() {
         <h2 className="section-title" style={{ marginBottom: '16px' }}>
           THE WEB OF AMBITION
         </h2>
-        <p className="section-body" style={{ marginBottom: '32px' }}>
-          {networkStats.drivers} drivers. {networkStats.constructors} constructors. Every edge is a season spent together.
-          Node size reflects career wins. Search any driver or team to trace their story through the network.
+        <p className="section-body" style={{ marginBottom: '32px', lineHeight: '1.6', maxWidth: '100%', textAlign: 'justify' }}>
+          Welcome to the F1 transfer network. This bipartite force-directed graph visualizes the movement of talent across 75 years of racing history. 
+          There are two types of nodes: <strong style={{ color: TEAM_COLOR }}>Constructors (Red)</strong> and <strong style={{ color: DRIVER_COLOR }}>Drivers (Grey)</strong>. 
+          Driver node sizes scale mathematically with their total career wins, highlighting the sport's biggest legends. 
+          The <strong>connections (edges)</strong> represent a driver racing for a specific constructor. 
+          The thicker an edge is, the more seasons they spent together. The brightness and opacity of a connection indicate the number of wins achieved during that specific partnership. 
+          Use the search bar below or click the famous journeys to trace how legendary drivers bridged different team dynasties!
         </p>
 
         {/* Stats */}

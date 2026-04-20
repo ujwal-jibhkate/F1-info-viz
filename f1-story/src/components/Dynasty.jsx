@@ -282,6 +282,16 @@ function StackedAreaChart({ data, selectedConstructors, onHover, hoveredYear }) 
       .attr('letter-spacing', '2')
       .text('CONSTRUCTOR POINTS')
 
+    // X axis label
+    g.append('text')
+      .attr('x', W / 2).attr('y', H + 40)
+      .attr('text-anchor', 'middle')
+      .attr('fill', COLORS.steel)
+      .attr('font-family', FONTS.mono)
+      .attr('font-size', '10px')
+      .attr('letter-spacing', '2')
+      .text('SEASON')
+
     // Invisible hover overlay
     g.append('rect')
       .attr('width', W).attr('height', H)
@@ -504,35 +514,73 @@ function DominanceLollipop({ data }) {
       .attr('font-family', FONTS.mono)
       .text('50% THRESHOLD')
 
+    // Y axis label
+    g.append('text')
+      .attr('transform', 'rotate(-90)')
+      .attr('x', -H / 2).attr('y', -40)
+      .attr('text-anchor', 'middle')
+      .attr('fill', COLORS.steel)
+      .attr('font-family', FONTS.mono)
+      .attr('font-size', '10px')
+      .attr('letter-spacing', '2')
+      .text('WIN PERCENTAGE')
+
+    // X axis label
+    g.append('text')
+      .attr('x', W / 2).attr('y', H + 40)
+      .attr('text-anchor', 'middle')
+      .attr('fill', COLORS.steel)
+      .attr('font-family', FONTS.mono)
+      .attr('font-size', '10px')
+      .attr('letter-spacing', '2')
+      .text('SEASON')
+
   }, [filtered, dims])
 
   return (
     <div ref={wrapRef} style={{ width: '100%' }}>
-      {/* Filter buttons */}
-      <div style={{ display: 'flex', gap: '8px', marginBottom: '16px', flexWrap: 'wrap' }}>
-        {[
-          { key: 'all', label: 'ALL SEASONS' },
-          { key: 'dominant', label: 'MOST DOMINANT' },
-          { key: 'chaotic', label: 'MOST COMPETITIVE' },
-        ].map(({ key, label }) => (
-          <button
-            key={key}
-            onClick={() => setFilter(key)}
-            style={{
-              padding: '6px 16px',
-              fontFamily: FONTS.mono,
-              fontSize: '10px',
-              letterSpacing: '2px',
-              background: filter === key ? COLORS.racingRed : 'transparent',
-              color: filter === key ? 'white' : COLORS.steel,
-              border: `1px solid ${filter === key ? COLORS.racingRed : COLORS.carbonBorder}`,
-              cursor: 'pointer',
-              transition: 'all 0.2s',
-            }}
-          >
-            {label}
-          </button>
-        ))}
+      {/* Filter buttons and Legend wrapper */}
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '16px', flexWrap: 'wrap', gap: '16px' }}>
+        {/* Filter buttons */}
+        <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          {[
+            { key: 'all', label: 'ALL SEASONS' },
+            { key: 'dominant', label: 'MOST DOMINANT' },
+            { key: 'chaotic', label: 'MOST COMPETITIVE' },
+          ].map(({ key, label }) => (
+            <button
+              key={key}
+              onClick={() => setFilter(key)}
+              style={{
+                padding: '6px 16px',
+                fontFamily: FONTS.mono,
+                fontSize: '10px',
+                letterSpacing: '2px',
+                background: filter === key ? COLORS.racingRed : 'transparent',
+                color: filter === key ? 'white' : COLORS.steel,
+                border: `1px solid ${filter === key ? COLORS.racingRed : COLORS.carbonBorder}`,
+                cursor: 'pointer',
+                transition: 'all 0.2s',
+              }}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
+
+        {/* Legend */}
+        <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
+          {[
+            { color: '#4ecdc4', label: 'COMPETITIVE (<55%)' },
+            { color: '#888888', label: 'AVERAGE' },
+            { color: COLORS.racingRed, label: 'DOMINANT (>95%)' },
+          ].map(({ color, label }) => (
+            <div key={label} style={{ display: 'flex', alignItems: 'center', gap: '6px', fontFamily: FONTS.mono, fontSize: '9px', color: COLORS.steel, letterSpacing: '1px' }}>
+              <span style={{ width: 8, height: 8, borderRadius: '50%', background: color, display: 'inline-block' }} />
+              {label}
+            </div>
+          ))}
+        </div>
       </div>
       <svg
         ref={svgRef}
@@ -600,8 +648,12 @@ function ConstructorLegend({ selected, onChange }) {
     }
   }
   return (
-    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px', marginBottom: '20px' }}>
-      <button
+    <div style={{ marginBottom: '20px' }}>
+      <div style={{ fontFamily: FONTS.mono, fontSize: '9px', letterSpacing: '2px', color: COLORS.steel, marginBottom: '8px' }}>
+        CONSTRUCTORS LEGEND (CLICK TO TOGGLE)
+      </div>
+      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '6px' }}>
+        <button
         onClick={() => onChange([])}
         style={{
           padding: '4px 12px',
@@ -630,6 +682,7 @@ function ConstructorLegend({ selected, onChange }) {
           {name}
         </button>
       ))}
+      </div>
     </div>
   )
 }
