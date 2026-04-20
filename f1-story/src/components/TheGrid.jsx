@@ -324,7 +324,7 @@ export default function TheGrid() {
           THE GRID
         </h2>
         <p className="section-body" style={{ marginBottom: '40px', lineHeight: '1.6', maxWidth: '100%', textAlign: 'justify' }}>
-          Welcome to The Grid. This interactive scatter plot analyzes over 25,000 race records to measure how effectively a driver's starting qualifying position dictates their final race result. 
+          Welcome to The Grid. This scatter plot analyzes over 25,000 race records to measure how effectively a driver's starting qualifying position dictates their final race result. 
           The data is mapped by circuit type: <strong style={{ color: STREET_COLOR }}>Street Circuits (Orange)</strong> and <strong style={{ color: PERMANENT_COLOR }}>Permanent Circuits (Teal)</strong>. 
           A steep diagonal line signifies intense predictability, while a scattered cloud indicates venues where overtaking and race strategy can overcome a poor qualifying session. Use the toggles below to filter the data by specific tracks and eras to see how predictability has shifted!
         </p>
@@ -489,9 +489,6 @@ export default function TheGrid() {
           The data agrees.
         </div>
 
-        <p style={{ fontFamily: FONTS.mono, fontSize: '10px', color: COLORS.asphalt, letterSpacing: '1.5px', marginTop: '16px' }}>
-          HOVER ANY POINT TO SEE DRIVER + RACE DETAILS · DASHED LINE = PERFECT GRID:FINISH RATIO
-        </p>
       </div>
     </section>
   )
