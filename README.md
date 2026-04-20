@@ -116,11 +116,20 @@ With over 3,597 unique season stints analyzed and mapped natively, the bipartite
 
 ### Data Gathering
 The centralized pipeline merges and unites raw datasets through three primary mechanisms:
-1. **Kaggle's F1 Race Data (1950–2017)**: The foundational historical record linking drivers, constructors, and outcomes.
-2. **Formula1-Datasets Repository (2018–2025)**: Supplements and closes the more contemporary temporal gap.
-3. **Jolpica Ergast Public API**: Bypasses stagnant files entirely by iteratively querying the full 75-year timeline live to fetch natively formatted race outcomes, generating high-fidelity edges natively for the network application (`fetch_api_datasets.py`).
+1. **Formula 1 World Championship Dataset (Kaggle)**: Curated by Rohan Rao, this dataset serves as the foundational historical record linking drivers, constructors, and outcomes.
+2. **Ergast Motor Racing Developer API Archive**: Used as a supplemental baseline for legacy race records and historical circuit metadata. 
+3. **Jolpica-F1 Ergast Public API**: Bypasses stagnant files entirely by iteratively querying the full 75-year timeline live via `api.jolpi.ca/ergast`. This endpoint guarantees properly formatted, up-to-date modern race outcomes, generating high-fidelity edges natively for the network graph (`fetch_api_datasets.py`).
 
 ### Data Quality & Limitations
 - **Data Scaling**: Raw datasets incorporated over 426,000 granular lap-times and 6,000 pit-stops. To maintain peak 60fps browser rendering and prioritize overarching competitive trends, these records were successfully aggregated down and filtered out of the interactive D3 application endpoints.
 - **Normalization Algorithms**: A custom Python-based string-matching heuristic was utilized for circuit mapping—classifying structural modern venues seamlessly while explicitly grouping distinct identifiers natively containing "Monaco," "Marina Bay," "Las Vegas," and "Baku" strictly into "Street Circuits." As this avoids turn-by-turn simulation, the automated categorization stands as an effective, if high-level, procedural technique.
-- **Qualifying Gaps**: F1 qualifying data is fully standardized and 100% complete for 2024–2025 explicitly parsed through the API. However, grid data preceding 1994 requires navigating more unreliable historical anomalies.
+- **Qualifying Gaps**: F1 qualifying data is fully standardized and 100% complete for modern seasons parsed through the Jolpica API. However, grid data preceding 1994 requires navigating more unreliable historical anomalies.
+
+---
+
+## 📚 References & Citations
+
+*   **Rao, R.** (n.d.). *Formula 1 World Championship (1950 - 2024)* [Data set]. Kaggle. Retrieved from [https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020](https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020)
+*   **toUpperCase78**. (2025). *Formula1-datasets* [GitHub repository]. GitHub. Retrieved from [https://github.com/toUpperCase78/formula1-datasets](https://github.com/toUpperCase78/formula1-datasets)
+*   **Ergast Developer API**. (2024). *Ergast F1 Data Repository* [Archived Database]. Retrieved from [http://ergast.com/mrd/](http://ergast.com/mrd/)
+*   **Jolpica F1**. (2025). *Jolpica Ergast REST API* [Application Programming Interface]. Jolpica. Retrieved from [https://jolpi.ca/](https://jolpi.ca/)

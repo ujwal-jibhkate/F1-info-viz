@@ -285,6 +285,24 @@ export default function Conclusion() {
           ILS-Z637 INFORMATION VISUALIZATION · INDIANA UNIVERSITY · SP26 ·
           MOHIT MAHAJAN · UJWAL JIBHKATE · TUSHAR KHATRI
         </p>
+
+        <div style={{
+          marginTop: '32px',
+          paddingTop: '24px',
+          borderTop: `1px solid ${COLORS.carbonBorder}`,
+          textAlign: 'center',
+          fontFamily: FONTS.mono,
+          fontSize: '9px',
+          color: COLORS.steel,
+          letterSpacing: '1px',
+          lineHeight: '1.8'
+        }}>
+          <div style={{ color: COLORS.silver, marginBottom: '8px', letterSpacing: '2px' }}>DATA SOURCES & CITATIONS</div>
+          <div>RAO, R. (N.D.). FORMULA 1 WORLD CHAMPIONSHIP (1950 - 2024) [DATA SET]. KAGGLE. <a href="https://www.kaggle.com/datasets/rohanrao/formula-1-world-championship-1950-2020" target="_blank" rel="noreferrer" style={{ color: COLORS.racingRed, textDecoration: 'none' }}>[LINK]</a></div>
+          <div>TOUPPERCASE78. (2025). FORMULA1-DATASETS [GITHUB REPOSITORY]. GITHUB. <a href="https://github.com/toUpperCase78/formula1-datasets" target="_blank" rel="noreferrer" style={{ color: COLORS.racingRed, textDecoration: 'none' }}>[LINK]</a></div>
+          <div>ERGAST DEVELOPER API. (2024). ERGAST F1 DATA REPOSITORY [ARCHIVED DATABASE]. <a href="http://ergast.com/mrd/" target="_blank" rel="noreferrer" style={{ color: COLORS.racingRed, textDecoration: 'none' }}>[LINK]</a></div>
+          <div>JOLPICA F1. (2025). JOLPICA ERGAST REST API [APPLICATION PROGRAMMING INTERFACE]. JOLPICA. <a href="https://jolpi.ca/" target="_blank" rel="noreferrer" style={{ color: COLORS.racingRed, textDecoration: 'none' }}>[LINK]</a></div>
+        </div>
       </div>
     </section>
   )
