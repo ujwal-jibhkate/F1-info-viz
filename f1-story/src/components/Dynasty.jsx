@@ -733,9 +733,10 @@ export default function Dynasty() {
             CONSTRUCTOR DYNASTIES
           </h2>
         </div>
-        <p className="section-body" style={{ marginBottom: '40px' }}>
-          Every era of F1 has had one team that rewrote the record books and one that fell from grace trying to stop them.
-          Watch the dynasties rise and collapse as regulations reset the playing field.
+        <p className="section-body" style={{ marginBottom: '40px', lineHeight: '1.6', maxWidth: '100%', textAlign: 'justify' }}>
+          Welcome to the Dynasty Timeline. This interactive area chart visualizes constructor dominance across 75 years of Formula 1 history by mapping cumulative championship points.
+          The vertical dashed lines mark the nine distinctive regulatory eras of the sport. Hover over any point on the chart to inspect a specific year's performance, or toggle constructors in the legend above to filter their specific dynastic rise and fall.
+          Switch to the <strong>Dominance Index</strong> tab to view a mathematical breakdown of the most extremely concentrated seasons in history, calculated by the top team's exact win percentage!
         </p>
 
         {/* Story callouts */}

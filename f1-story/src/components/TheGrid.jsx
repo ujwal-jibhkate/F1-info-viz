@@ -323,9 +323,10 @@ export default function TheGrid() {
         <h2 className="section-title" style={{ marginBottom: '16px' }}>
           THE GRID
         </h2>
-        <p className="section-body" style={{ marginBottom: '40px' }}>
-          Does qualifying predict the race? On most circuits, it's a strong guide.
-          But on the streets of Monaco and Singapore, it practically writes the result.
+        <p className="section-body" style={{ marginBottom: '40px', lineHeight: '1.6', maxWidth: '100%', textAlign: 'justify' }}>
+          Welcome to The Grid. This interactive scatter plot analyzes over 25,000 race records to measure how effectively a driver's starting qualifying position dictates their final race result. 
+          The data is mapped by circuit type: <strong style={{ color: STREET_COLOR }}>Street Circuits (Orange)</strong> and <strong style={{ color: PERMANENT_COLOR }}>Permanent Circuits (Teal)</strong>. 
+          A steep diagonal line signifies intense predictability, while a scattered cloud indicates venues where overtaking and race strategy can overcome a poor qualifying session. Use the toggles below to filter the data by specific tracks and eras to see how predictability has shifted!
         </p>
 
         {/* Key stats */}
