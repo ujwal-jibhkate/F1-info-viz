@@ -133,3 +133,5 @@ The centralized pipeline merges and unites raw datasets through three primary me
 *   **toUpperCase78**. (2025). *Formula1-datasets* [GitHub repository]. GitHub. Retrieved from [https://github.com/toUpperCase78/formula1-datasets](https://github.com/toUpperCase78/formula1-datasets)
 *   **Ergast Developer API**. (2024). *Ergast F1 Data Repository* [Archived Database]. Retrieved from [http://ergast.com/mrd/](http://ergast.com/mrd/)
 *   **Jolpica F1**. (2025). *Jolpica Ergast REST API* [Application Programming Interface]. Jolpica. Retrieved from [https://jolpi.ca/](https://jolpi.ca/)
+
+Thank you!
