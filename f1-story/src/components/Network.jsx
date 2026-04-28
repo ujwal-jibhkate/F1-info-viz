@@ -3,7 +3,7 @@ import * as d3 from 'd3'
 import { useCSV } from '../hooks/useCSV'
 import { COLORS, FONTS, FAMOUS_JOURNEYS } from '../styles/theme'
 
-const TEAM_COLOR   = COLORS.racingRed
+const TEAM_COLOR = COLORS.racingRed
 const DRIVER_COLOR = '#cccccc'
 
 // Top N drivers by total wins for default view
@@ -87,9 +87,9 @@ function buildGraph(data, filter) {
 
 // ─── Force Network ────────────────────────────────────────────────────────────
 function ForceNetwork({ data, filter, highlightDriver }) {
-  const svgRef     = useRef(null)
-  const wrapRef    = useRef(null)
-  const simRef     = useRef(null)
+  const svgRef = useRef(null)
+  const wrapRef = useRef(null)
+  const simRef = useRef(null)
   const [dims, setDims] = useState({ width: 800, height: 580 })
   const [tooltip, setTooltip] = useState(null)
 
@@ -187,7 +187,7 @@ function ForceNetwork({ data, filter, highlightDriver }) {
       )
 
     // Tooltip
-    nodeG.on('mouseenter', function(event, d) {
+    nodeG.on('mouseenter', function (event, d) {
       d3.select(this).select('circle')
         .attr('stroke', 'white')
         .attr('stroke-width', 2)
@@ -198,15 +198,15 @@ function ForceNetwork({ data, filter, highlightDriver }) {
         data: d,
       })
     })
-    .on('mousemove', function(event) {
-      setTooltip(prev => prev ? { ...prev, x: event.clientX, y: event.clientY } : null)
-    })
-    .on('mouseleave', function(event, d) {
-      d3.select(this).select('circle')
-        .attr('stroke', d.type === 'team' ? COLORS.redHot : COLORS.carbon)
-        .attr('stroke-width', d.type === 'team' ? 1.5 : 0.5)
-      setTooltip(null)
-    })
+      .on('mousemove', function (event) {
+        setTooltip(prev => prev ? { ...prev, x: event.clientX, y: event.clientY } : null)
+      })
+      .on('mouseleave', function (event, d) {
+        d3.select(this).select('circle')
+          .attr('stroke', d.type === 'team' ? COLORS.redHot : COLORS.carbon)
+          .attr('stroke-width', d.type === 'team' ? 1.5 : 0.5)
+        setTooltip(null)
+      })
 
     // Tick
     sim.on('tick', () => {
@@ -224,10 +224,10 @@ function ForceNetwork({ data, filter, highlightDriver }) {
       nodeG.select('circle')
         .attr('fill-opacity', d =>
           d.id === driverId ||
-          linksCopy.some(l =>
-            (l.source.id === driverId || l.target.id === driverId) &&
-            (l.source.id === d.id || l.target.id === d.id)
-          ) ? 1 : 0.15
+            linksCopy.some(l =>
+              (l.source.id === driverId || l.target.id === driverId) &&
+              (l.source.id === d.id || l.target.id === d.id)
+            ) ? 1 : 0.15
         )
     }
 
@@ -249,7 +249,7 @@ function ForceNetwork({ data, filter, highlightDriver }) {
           style={{
             position: 'fixed',
             left: tooltip.x + 14,
-            top:  tooltip.y - 40,
+            top: tooltip.y - 40,
             zIndex: 999,
             pointerEvents: 'none',
           }}
@@ -286,18 +286,18 @@ function ForceNetwork({ data, filter, highlightDriver }) {
 
 // ─── Search box ───────────────────────────────────────────────────────────────
 function SearchBox({ data, onSelect }) {
-  const [query, setQuery]     = useState('')
+  const [query, setQuery] = useState('')
   const [results, setResults] = useState([])
-  const [open, setOpen]       = useState(false)
+  const [open, setOpen] = useState(false)
 
   const allDrivers = useMemo(() => Array.from(new Set(data.map(d => d.Driver))).sort(), [data])
-  const allTeams   = useMemo(() => Array.from(new Set(data.map(d => d.Constructor))).sort(), [data])
+  const allTeams = useMemo(() => Array.from(new Set(data.map(d => d.Constructor))).sort(), [data])
 
   useEffect(() => {
     if (!query.trim()) { setResults([]); return }
     const q = query.toLowerCase()
     const drivers = allDrivers.filter(d => d.toLowerCase().includes(q)).slice(0, 5).map(d => ({ type: 'driver', value: d }))
-    const teams   = allTeams.filter(t => t.toLowerCase().includes(q)).slice(0, 4).map(t => ({ type: 'team',   value: t }))
+    const teams = allTeams.filter(t => t.toLowerCase().includes(q)).slice(0, 4).map(t => ({ type: 'team', value: t }))
     setResults([...drivers, ...teams])
     setOpen(true)
   }, [query, allDrivers, allTeams])
@@ -371,8 +371,8 @@ function SearchBox({ data, onSelect }) {
 
 // ─── Main Network component ───────────────────────────────────────────────────
 export default function Network() {
-  const { data, loading } = useCSV('rq3_driver_transfers.csv')
-  const [filter, setFilter]         = useState({ type: 'default' })
+  const { data, loading } = useCSV('rq3_driver_transfers (2).csv')
+  const [filter, setFilter] = useState({ type: 'default' })
   const [highlightDriver, setHighlight] = useState(null)
 
   const handleSearch = useCallback((result) => {
@@ -394,12 +394,12 @@ export default function Network() {
   const networkStats = useMemo(() => {
     if (!data.length) return {}
     return {
-      drivers:      new Set(data.map(d => d.Driver)).size,
+      drivers: new Set(data.map(d => d.Driver)).size,
       constructors: new Set(data.map(d => d.Constructor)).size,
-      edges:        data.length,
-      topPair:      (() => {
+      edges: data.length,
+      topPair: (() => {
         const pairs = d3.rollup(data, v => d3.sum(v, d => d.Win || 0), d => `${d.Driver} @ ${d.Constructor}`)
-        return Array.from(pairs.entries()).sort((a,b) => b[1]-a[1])[0]
+        return Array.from(pairs.entries()).sort((a, b) => b[1] - a[1])[0]
       })(),
     }
   }, [data])
@@ -420,11 +420,11 @@ export default function Network() {
           THE WEB OF AMBITION
         </h2>
         <p className="section-body" style={{ marginBottom: '32px', lineHeight: '1.6', maxWidth: '100%', textAlign: 'justify' }}>
-          Welcome to the F1 transfer network. This bipartite force-directed graph visualizes the movement of talent across 75 years of racing history. 
-          There are two types of nodes: <strong style={{ color: TEAM_COLOR }}>Constructors (Red)</strong> and <strong style={{ color: DRIVER_COLOR }}>Drivers (Grey)</strong>. 
-          Driver node sizes scale mathematically with their total career wins, highlighting the sport's biggest legends. 
-          The <strong>connections (edges)</strong> represent a driver racing for a specific constructor. 
-          The thicker an edge is, the more seasons they spent together. The brightness and opacity of a connection indicate the number of wins achieved during that specific partnership. 
+          Welcome to the F1 transfer network. This bipartite force-directed graph visualizes the movement of talent across 75 years of racing history.
+          There are two types of nodes: <strong style={{ color: TEAM_COLOR }}>Constructors (Red)</strong> and <strong style={{ color: DRIVER_COLOR }}>Drivers (Grey)</strong>.
+          Driver node sizes scale mathematically with their total career wins, highlighting the sport's biggest legends.
+          The <strong>connections (edges)</strong> represent a driver racing for a specific constructor.
+          The thicker an edge is, the more seasons they spent together. The brightness and opacity of a connection indicate the number of wins achieved during that specific partnership.
           Use the search bar below or click the famous journeys to trace how legendary drivers bridged different team dynasties!
         </p>
 
@@ -470,8 +470,8 @@ export default function Network() {
                   padding: '6px 16px',
                   fontFamily: FONTS.mono, fontSize: '10px', letterSpacing: '1.5px',
                   background: filter.value === j.driver ? j.color : 'transparent',
-                  color:      filter.value === j.driver ? COLORS.carbon : COLORS.silver,
-                  border:     `1px solid ${filter.value === j.driver ? j.color : COLORS.carbonBorder}`,
+                  color: filter.value === j.driver ? COLORS.carbon : COLORS.silver,
+                  border: `1px solid ${filter.value === j.driver ? j.color : COLORS.carbonBorder}`,
                   cursor: 'pointer', transition: 'all 0.2s',
                 }}>
                 {j.label.toUpperCase()}: {j.driver.split(' ').slice(-1)[0].toUpperCase()}
@@ -483,8 +483,8 @@ export default function Network() {
                 padding: '6px 16px',
                 fontFamily: FONTS.mono, fontSize: '10px', letterSpacing: '1.5px',
                 background: filter.type === 'default' ? COLORS.racingRed : 'transparent',
-                color:      filter.type === 'default' ? 'white' : COLORS.steel,
-                border:     `1px solid ${filter.type === 'default' ? COLORS.racingRed : COLORS.carbonBorder}`,
+                color: filter.type === 'default' ? 'white' : COLORS.steel,
+                border: `1px solid ${filter.type === 'default' ? COLORS.racingRed : COLORS.carbonBorder}`,
                 cursor: 'pointer', transition: 'all 0.2s',
               }}>
               TOP 50 LEGENDS
@@ -524,7 +524,7 @@ export default function Network() {
         {/* Legend */}
         <div style={{ display: 'flex', gap: '24px', marginTop: '16px', flexWrap: 'wrap' }}>
           {[
-            { color: TEAM_COLOR,   label: 'Constructor node — size fixed' },
+            { color: TEAM_COLOR, label: 'Constructor node — size fixed' },
             { color: DRIVER_COLOR, label: 'Driver node — size = career wins' },
             { color: 'rgba(232,0,45,0.6)', label: 'Edge thickness = seasons together, brightness = wins' },
           ].map(({ color, label }) => (
